@@ -5,11 +5,11 @@
 
 - 🌱 I’m currently learning **Java, Data Structure in C**
 
-- 👨‍💻 All of my projects are available at [bibekchandsah.com.np](bibekchandsah.com.np)
+- 👨‍💻 All of my projects are available at [bibekchandsah.com.np](https://bibekchandsah.com.np)
 
 - 📫 How to reach me **bibeksha48@gmail.com**
 
-- 📄 Know about my experiences [bibekchandsah.com.np](bibekchandsah.com.np)
+- 📄 Know about my experiences [bibekchandsah.com.np](https://bibekchandsah.com.np)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
