@@ -121,10 +121,17 @@ btn:focus, a:focus {
     margin-right: 7px;
 }
 
-
-
 .mt-3 {
     margin-top: 0rem !important;
+}
+
+.footerBadge.d-flex {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .MostPopularContainer {
@@ -139,12 +146,12 @@ btn:focus, a:focus {
     overflow-y: auto;
 }
 
-.swiper {
+/* .swiper {
     width: 600px;
-    /* height: 300px; */
-}
+    height: 300px;
+} */
 
-.swiper-slide{
+.swiper-slide {
     /* margin-left: 300px; */
 }
 
@@ -155,5 +162,64 @@ btn:focus, a:focus {
 
     .mt-3 {
         margin-top: 1rem !important;
+    }
+}
+
+
+.projectIcon{
+    text-align: center;
+}
+
+/* testimonial */
+.slide-container {
+    max-width: 1120px;
+    width: 100%;
+    /* background-color: grey; */
+    padding: 40px 0;
+}
+
+.slide-content {
+    margin: 0 40px;
+    /* background-color: red; */
+    overflow: hidden;
+    padding-left: 40px;
+}
+
+
+.swiper-navBtn {
+    color: #6E93f7;
+    transition: color 0.3s ease;
+}
+
+.swiper-navBtn:hover {
+    color: #4070f4;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+    font-size: 40px;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-pagination-bullet {
+    background-color: #6E93f7;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #4070f4;
+}
+
+
+@media (max-width: 1024px) {
+    .slide-content {
+        padding-left: 0px;
     }
 }
