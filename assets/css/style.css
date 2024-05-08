@@ -199,6 +199,20 @@ footer.py-5 {
 }
 
 
+/* visit count */
+.visitcount img{
+    position: absolute;
+    clip: rect(0, 120px, 50px, 80px);
+    /* clip: shape(top, right, bottom, left); NB 'rect' is the only available option */
+    scale: 1.3;
+    margin: 10px;
+}
+
+.visitcount span{
+    padding: 10px !important;
+}
+
+
 
 
 /* badges */
