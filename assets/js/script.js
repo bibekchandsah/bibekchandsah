@@ -1,48 +1,3 @@
-// Function to dynamically add meta tags to the head element
-function addMetaTags() {
-    // Get the head element
-    var head = document.head;
-
-    // Create meta tags
-    var metaTags = [
-        { name: "description", content: "Your go-to destination for all things related to web development! and many other things. At bibekchandsah.com.np, we believe in the power of quality resources to enhance your coding skills. That's why we offer all our content free of charge, ensuring that everyone has access to the tools they need to succeed." },
-        { name: "search.description", content: "bibekchandsah bcs bibek10550 bibeksha10550 web-development front-end development" },
-        { name: "keywords", content: "bibek sha, bibek10550, bibekchandsah, web-development, resources, bibeksha10550 bibekchandsah" },
-        { name: "author", content: "Bibek Chand Sah" },
-        { name: "language", content: "en" },
-        { rel: "canonical", href: "https://bibek10550.github.io/bibek10550" },
-        { property: "og:title", content: "BibekChandSah (BCS)" },
-        { property: "og:description", content: "Your go-to destination for all things related to web development! and many other things. At bibekchandsah.com.np, we believe in the power of quality resources to enhance your coding skills. That's why we offer all our content free of charge, ensuring that everyone has access to the tools they need to succeed." },
-        { property: "og:image", content: "https://raw.githubusercontent.com/bibek10550/bibek10550/main/assets/images/favicon/apple-touch-icon.png" },
-        { property: "og:url", content: "https://bibek10550.github.io/bibek10550" },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: "BibekChandSah (BCS)" },
-        { name: "twitter:description", content: "Your go-to destination for all things related to web development! and many other things. At bibekchandsah.com.np, we believe in the power of quality resources to enhance your coding skills. That's why we offer all our content free of charge, ensuring that everyone has access to the tools they need to succeed." },
-        { name: "twitter:image", content: "https://raw.githubusercontent.com/bibek10550/bibek10550/main/assets/images/favicon/apple-touch-icon.png" }
-    ];
-
-    // Loop through the metaTags array and create meta elements
-    metaTags.forEach(function (meta) {
-        var metaTag = document.createElement('meta');
-        for (var key in meta) {
-            metaTag.setAttribute(key, meta[key]);
-        }
-        // Append meta elements to the head element
-        head.appendChild(metaTag);
-    });
-}
-
-// Call the function to add meta tags
-addMetaTags();
-
-
-
-
-
-
-
-
 // add title in body 
 document.addEventListener('DOMContentLoaded', function () {
     document.body.setAttribute('title', 'Developed by Bibek');
@@ -689,7 +644,8 @@ function setWhatsappLink() {
         });
     } else {
         console.log("pc devices");
-        whatsappLink.href = 'whatsapp://send?text=Go%20to%20KIIT%20CSE-%20https://bibek10550.github.io/kiitcse/%20KIIT%20CSE%20is%20resource%20hub%20which%20simplifies%20your%20educational%20journey%20in%20Computer%20Science%20and%20Engineering%20(CSE).%20It%20offers:%20Previous%20Year%20Questions%20(PYQs),%20Concise%20Notes,%20Video%20Lectures.';
+        whatsappLink.href = 'whatsapp://send?text=Go%20to%20BCS%20-%20https://bibekchandsah.com.np/%20Your%20go-to%20destination%20for%20all%20things%20related%20to%20web%20development!%20and%20many%20other%20things.%20At bibekchandsah.com.np,%20we%20believe%20in%20the%20power%20of%20quality%20resources%20to%20enhance%20your coding%20skills.%20Thats%20why%20we%20offer%20all%20our%20content%20free%20of%20charge,%20ensuring%20that%20everyone%20has%20access%20to%20the%20tools%20they%20need%20to%20succeed.';
+
 
         // Hide image preview if it's visible
         imagePreview.style.display = 'none';
