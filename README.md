@@ -44,6 +44,10 @@ If you have any feedback, please reach out to us at <a href="feedback.html">Feed
 ## Screenshots
 <!-- ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here) -->
 <img src="assets/images/projects/bibek10550.png" alt="BCS"/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 158d8f8cf45642024de7506ca5707e76c7678402
 
 ## Logo
 <!-- ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png) -->
