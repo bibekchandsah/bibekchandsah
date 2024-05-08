@@ -443,6 +443,63 @@ copyrightNotice.appendChild(nameRightsInfo);
 
 
 
+// page visit counter
+// Object mapping each HTML page to its corresponding image URL
+var pageImageMap = {
+    'index.html': 'https://camo.githubusercontent.com/29250e52b8862deb40658c56591244df08b332504f933e7897e4f3df5b507be7/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373696e646578266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'downloads.html': 'https://camo.githubusercontent.com/677ad96384e860e2df5c97068970be69eab8091b55bfaf1abb481fd707eed83e/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373646f776e6c6f616473266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'developer.html': 'https://camo.githubusercontent.com/8406a2b2052b0d4d584a27e44f1f326717611596d3c7f3bbdbb0afdd680c5f00/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373646576656c6f706572266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'feedback.html': 'https://camo.githubusercontent.com/5b0d14ccab18afbff9eebe1e6b3aedf35e8bba3fadacfd7ed388bd379e89eefd/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373666565646261636b266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'html&css.html': 'https://camo.githubusercontent.com/5af2e7676b402e1dea4b31cdf5ec8108dced914532b88408bcfc9bfaf88745b1/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b313035353062637368746d6c26637373266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'javascript.html': 'https://camo.githubusercontent.com/e00b20157022be6b4e3d8ba68697d2823e377211df67e4c3a601dd0317b4fe3b/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b31303535306263736a617661736372697074266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'page-1.html': 'https://camo.githubusercontent.com/a2479cf83f41cb42809db52097d0ead674d2d8beb20ec1838e16db8ff92eafde/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373706167652d31266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'projects.html': 'https://camo.githubusercontent.com/b89204ae59b6d8b2219c804cb5331b01d8bcf021544d465fd09fb86f8c9c1b8a/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b313035353062637370726f6a656374736167652d31266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'telegram.html': 'https://camo.githubusercontent.com/cc17043423f4e8e1ae016f01d79770b831eb6c83fdcd75101c69938ba45c3599/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b313035353062637374656c656772616d266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'term&conditions.html': 'https://camo.githubusercontent.com/09dd4ec2fb6d5ae9e96a912b2056bc0ac110d66ec7f79beb4b433c80020465a9/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b31303535306263737465726d26636f6e646974696f6e73266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'thankyou.html': 'https://camo.githubusercontent.com/d518f25277cd7cbed3ecd8f53d65431e0704c82e29ca75788ce77d115bd156a0/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b31303535306263737468616e6b796f75266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    '404.html': 'https://camo.githubusercontent.com/8e6354e5091fe8ad7b5c8ba2a733ef54a625aea8bedaebcda4febd46738920e0/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373343034266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    // 'downloads.html': 'https',
+    // Add more pages and their corresponding image URLs here
+};
+// Function to get the current page URL
+function getCurrentPageUrl() {
+    return window.location.href.split('/').pop(); // Get the last part of the URL (page name)
+}
+// Function to add visit count container with dynamic image URL based on current page
+function addVisitCountContainer() {
+    // Get the current page URL
+    var currentPage = getCurrentPageUrl();
+
+    // Get the image URL for the current page from the pageImageMap object
+    var imageUrl = pageImageMap[currentPage];
+
+    // Select the .visitCountContainer element
+    var visitCountContainer = document.querySelector('.visitCountContainer');
+
+    // Create a new div element for the visit count container
+    var visitCountContainerDiv = document.createElement('div');
+    visitCountContainerDiv.classList.add('text-center');
+    visitCountContainerDiv.innerHTML = `
+    <!-- <h3>Total Visitors</h3>
+        <hr> -->
+        <div class="d-flex gap-2 justify-content-center py-2 mb-lg-0 toolBadge visitcount">
+            <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
+                <img class="me-1" src="${imageUrl}" style="max-width: 100%;" alt="visitcount logo"> Total Page Visit
+            </span>
+        </div> 
+    `;
+    // Append the new div element to the .visitCountContainer element
+    visitCountContainer.appendChild(visitCountContainerDiv);
+}
+
+// Call the function to add visit count container with dynamic image URL
+addVisitCountContainer();
+
+
+
+
+
+
 
 
 // Tooltip activation
