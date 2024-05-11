@@ -200,7 +200,7 @@ footer.py-5 {
 
 
 /* visit count */
-.visitcount img{
+.visitcount img {
     position: absolute;
     clip: rect(0, 120px, 50px, 80px);
     /* clip: shape(top, right, bottom, left); NB 'rect' is the only available option */
@@ -208,7 +208,7 @@ footer.py-5 {
     margin: 10px;
 }
 
-.visitcount span{
+.visitcount span {
     padding: 10px !important;
 }
 
@@ -390,8 +390,9 @@ a {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-img{
-    transition: transform 0.5s ease; /* Add a smooth transition effect */
+img {
+    transition: transform 0.5s ease;
+    /* Add a smooth transition effect */
 }
 
 
@@ -832,6 +833,186 @@ img{
 
 
 
+
+
+
+/* search box result */
+.search-box {
+    position: absolute;
+    width: 320px;
+    background: var(--white-color);
+    /* margin: 200px auto 0; */
+    border-radius: var(--very-low-border);
+    top: 101px;
+    right: 3px;
+    z-index: var(--z-very-low);
+}
+
+.search-row {
+    position: absolute;
+    top: -95px;
+    left: 0px;
+    height: 50px;
+    width: 380px;
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    border-radius: var(--low-border) var(--low-border) 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px;
+}
+
+
+::placeholder {
+    color: var(--light-blue);
+}
+
+.result-box ul {
+    border-top: 1px solid var(--white-color);
+    padding: 15px 10px;
+}
+
+.result-box ul li {
+    list-style: none;
+    border-radius: var(--very-low-border);
+    /* padding: 10px; */
+    cursor: pointer;
+    display: flex;
+    height: 45px;
+    align-items: center;
+}
+
+.result-box ul li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4px 15px;
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+}
+
+.result-box ul li:hover {
+    background-color: hsla(var(--hue-color), 100%, 60%, 0.75);
+    transition: all 0.2s linear;
+}
+
+.result-box ul li:hover a {
+    color: var(--white-color);
+    font-weight: var(--font-bold);
+}
+
+.result-box {
+    max-height: 300px;
+    overflow-y: scroll;
+    position: absolute;
+    width: 320px;
+    background: var(--white-color);
+    top: -45px;
+    border-radius: 0 0 var(--low-border) var(--low-border);
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+@keyframes to-bottom {
+    0% {
+        /* transform: translateY(-10%); */
+        /* height: 0px; */
+        transform: scaleY(0) translateY(-1%);
+        transform-origin: top;
+        opacity: 0;
+    }
+
+    100% {
+        /* transform: translateY(0%); */
+        /* height: 300px; */
+        transform: scaleY(1) translateY(0%);
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+@keyframes to-top {
+    0% {
+        /* transform: translateY(0%); */
+        /* height: 300px; */
+        transform: scaleY(1) translateY(0%);
+        transform-origin: top;
+        opacity: 1;
+        z-index: -100;
+    }
+
+    100% {
+        /* transform: translateY(-20%); */
+        /* height: 0px; */
+        transform: scaleY(0) translateY(-1%);
+        transform-origin: top;
+        opacity: 0;
+    }
+}
+
+
+.search-input:focus .search-row {
+    border-radius: var(--low-border) var(--low-border) 0px 0px;
+}
+
+.search-row .search-input:focus {
+    border-radius: var(--low-border) var(--low-border) 0px 0px;
+}
+
+
+
+@media (max-width: 480px) {
+
+    #theme-buttons-container-calendar {
+        width: 400px;
+    }
+
+    #theme-buttons-container-commenting {
+        width: 410px;
+    }
+
+    .scrollup {
+        right: 20px;
+    }
+
+    .show-scroll {
+        bottom: 5.5rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .search-box {
+        right: 0px;
+        left: 15px;
+    }
+    .result-box {
+        width: 320px;
+    }
+}
+
+@media (max-width: 991px) {
+    .result-box {
+        top: 280px;
+        width: 370px;
+    }
+
+    .search-box {
+        width: 400px;
+        left: 15px;
+    }
+
+    .theme {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
 /* Downloads */
 .downloadButton {
     bottom: 5px;
@@ -862,7 +1043,7 @@ img{
     margin-bottom: 1rem;
 }
 
-.projectContainer1 .row{
+.projectContainer1 .row {
     align-items: center;
 }
 
@@ -870,23 +1051,24 @@ img{
 /* html&css */
 .HtmlCssContainer .col.itemBox:hover .card,
 .JavaScriptContainer .col.itemBox:hover .card,
-.ProjectContainer .col.itemBox:hover .card{
+.ProjectContainer .col.itemBox:hover .card {
     scale: 1.1;
     transform: translateY(-15px);
-    transition: transform 0.5s ease; 
+    transition: transform 0.5s ease;
 }
 
 .HtmlCssContainer .card a,
 .JavaScriptContainer .card a,
-.ProjectContainer .card a{
+.ProjectContainer .card a {
     overflow: hidden;
     border-radius: 0.375rem 0.375rem 0rem 0rem;
 }
 
 .HtmlCssContainer .col.itemBox:hover .card img,
 .JavaScriptContainer .col.itemBox:hover .card img,
-.ProjectContainer .col.itemBox:hover .card img{
-    transform: scale(1.2); /* Increase the scale (zoom) of the image on hover */
+.ProjectContainer .col.itemBox:hover .card img {
+    transform: scale(1.2);
+    /* Increase the scale (zoom) of the image on hover */
 }
 
 
@@ -977,15 +1159,15 @@ img{
     transition: all ease-in-out;
 }
 
-.searchbox .input-group{
+.searchbox .input-group {
     width: 80% !important;
 }
 
-.searchbox .input-group-text{
+.searchbox .input-group-text {
     border-radius: 20px 0px 0px 20px;
 }
 
-.searchbox .form-control{
+.searchbox .form-control {
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -1001,7 +1183,7 @@ img{
         width: 77.66666667% !important;
     }
 
-    .TelegramContainer .card{
+    .TelegramContainer .card {
         max-height: 138px;
         overflow: auto;
         width: 540px !important;
@@ -1011,6 +1193,36 @@ img{
         height: 72px;
         overflow: auto;
     }
+}
+
+
+
+
+/* prompt */
+.PromptContainer .copylink {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.PromptContainer .copylink:hover {
+    color: var(--primary-color);
+}
+
+.PromptContainer .copylink.fa-check-circle-o {
+    color: var(--primary-color);
+    font-size: larger;
+    transition: all ease-in-out;
+}
+
+.PromptContainer .card-text {
+    max-height: 130px;
+    overflow: auto;
+}
+
+.PromptContainer.row {
+    justify-content: center;
 }
 
 

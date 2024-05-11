@@ -52,7 +52,7 @@ navigationBar.innerHTML += `
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Others </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item telegram" href="telegram.html">Telegram Channels</a></li>
-                            <li><a class="dropdown-item videos" href="videos.html"></a></li>
+                            <li><a class="dropdown-item prompt" href="prompt.html">Prompts</a></li>
                             <li><a class="dropdown-item" href="#">Coming Soon</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -73,9 +73,23 @@ navigationBar.innerHTML += `
                     </select>
                 </div>
                 <form class="d-flex mt-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" data-bs-toggle="tooltip" data-bs-title="Alt + S">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                    <input class="form-control me-2 search-input" id="input-box" type="search" placeholder="Search anything here..." aria-label="Search" autocomplete="off" onkeydown="searchOnEnter(event)" onkeyup="search()" data-bs-toggle="tooltip" data-bs-title="Alt + S">
+                    <button class="btn btn-outline-primary" onclick="searchGoogle()">Search</button>
                 </form>
+                <!-- search box -->
+                <div class="search-box" id="updatesearchbox">
+                    <div class="result-box">
+                        <!-- search result dropdown box start -->
+                        <ul class="SearchResult" id="ResultBox" style="display: none;">
+                            <li><a href="https://bibek10550.github.io/bibek/">Bibek</a></li>
+                            <li><a href="https://bibek10550.github.io/Music/">Music</a></li>
+                            <!-- <ul><li><a href="">y</a></li>
+                <li><a href="">Y</a></li>
+                <li><a href="">Y</a></li></ul> -->
+                        </ul>
+                        <!-- search result dropdown box End -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -123,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "feedback.html": "feedback",
         "developer.html": "developer",
         "telegram.html": "telegram",
-        "videos.html": "videos",
+        "prompt.html": "prompt",
     };
     // Get the current HTML page name
     var currentPageName = window.location.pathname.split('/').pop();
@@ -300,6 +314,252 @@ document.addEventListener('keydown', function (event) {
 
 
 
+
+// filter typed word while searching on nav bar
+const search = () => {
+    let filter = document.getElementById('input-box').value.toUpperCase();
+    let ul = document.getElementById('ResultBox');
+    let li = ul.getElementsByTagName('li');
+    for (var i = 0; i < li.length; i++) {
+        let a = li[i].getElementsByTagName('a')[0];
+        let textValue = a.textContent || a.innerHTML;
+        if (textValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = '';
+        } else {
+            li[i].style.display = 'none';
+        }
+    }
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const resultsBox = document.getElementById("ResultBox");
+    const ResultsBox = document.querySelector(".result-box");
+    const inputBox = document.getElementById("input-box");
+    var SearchResult = document.getElementById("ResultBox");
+    // Handle click on document to close the results box if clicked outside
+    document.addEventListener("click", function (event) {
+        if (event.target.id == "input-box") {
+            SearchResult.style.display = "block";
+            ResultsBox.style.animation = "to-bottom 0.3s ease-in"
+        }
+        if (!resultsBox.contains(event.target) && event.target !== inputBox) {
+            ResultsBox.style.animation = "to-top 0.3s ease-in";
+            setTimeout(() => {
+                SearchResult.style.display = "none";
+                // resultsBox.style.display = "none";
+                ResultsBox.style.animation = ""; // Reset animation property
+            }, 300);
+        }
+    });
+    // Handle click on user-typed word to search on Google
+    resultsBox.addEventListener("click", function (event) {
+        // console.log(event.target.href)
+        if (event.target.tagName == "a") {
+            if (event.target.href == "#") {
+                const query = event.target.textContent.trim();
+                if (query !== "") {
+                    const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
+                    window.open(searchUrl, "_blank");
+                }
+                // Select the text inside the input after the search button is pressed
+                inputBox.select();
+            }
+        }
+    });
+    // Handle input changes to dynamically update the results box
+    inputBox.addEventListener("input", function (e) {
+        const filter = inputBox.value.trim().toLowerCase();
+        // resultsBox.innerHTML = ""; // Clear the current list
+        // console.log(e);
+        if (filter !== "") {
+            const newLi = document.createElement("li");
+            const newA = document.createElement("a");
+            newA.href = "#";
+            newA.textContent = filter;
+            newLi.appendChild(newA);
+            resultsBox.appendChild(newLi);
+            ResultsBox.style.display = "block";
+            ResultsBox.style.animation = "to-bottom 0.3s ease-in";
+
+            newA.addEventListener("click", () => {
+                window.open("https://google.com/search?q=" + newA.textContent, "_blank");
+            })
+        } else {
+            // ResultsBox.style.animation = "to-top 0.3s ease-in";
+            // setTimeout(() => {
+            //     ResultsBox.style.display = "none";
+            //     ResultsBox.style.animation = ""; // Reset animation property
+            // }, 300);
+        }
+    });
+});
+function handleResults() {
+    const ResultsBox = document.querySelector(".result-box");
+    const resultBox = document.getElementById('ResultBox');
+    const inputBox = document.getElementById('input-box');
+
+    if (resultBox.style.display === 'none') {
+        // Focus on the input box
+        inputBox.click();
+        inputBox.focus();
+        // Show the result box
+        resultBox.style.display = 'block';
+    } else {
+        // Hide the result box
+        ResultsBox.style.animation = "to-top 0.3s ease-in";
+        setTimeout(() => {
+            resultBox.style.display = 'none';
+            ResultsBox.style.animation = ""; // Reset animation property
+        }, 300);
+    }
+}
+// search box
+function searchOnEnter(event) {
+    if (event.keyCode === 13) {
+        searchGoogle();
+    }
+}
+// search on google
+function searchGoogle() {
+    const searchInput = document.querySelector(".search-input");
+    const query = searchInput.value.trim();
+    if (query !== "") {
+        const searchUrl = "https://www.bing.com/search?q=" + encodeURIComponent(query);
+        window.open(searchUrl, "_blank");
+        // Select the text inside the input after the search button is pressed
+        searchInput.select();
+    }
+}
+// short cut key for search "alt + s"
+document.addEventListener('keydown', function (event) {
+    // Check if Alt + S is pressed
+    if (event.altKey && event.key.toLowerCase() === 's') {
+        event.preventDefault(); // Prevent default browser behavior
+
+        // Handle different platforms and browsers
+        const platform = navigator.platform.toLowerCase();
+        const browser = navigator.userAgent.toLowerCase();
+
+        if ((platform.includes('mac') || browser.includes('safari')) ||
+            (platform.includes('mac') || browser.includes('firefox')) ||
+            (platform.includes('win') || browser.includes('edge')) ||
+            (platform.includes('linux'))) {
+            // Call the function to handle the "Alt + S" shortcut
+            handleResults();
+        } else {
+            console.log('Alt + S shortcut not supported on this platform/browser.');
+        }
+    }
+});
+
+
+
+
+
+
+// add new search list
+document.addEventListener('DOMContentLoaded', function () {
+    // Find the parent element of the search results list
+    var searchResultsList = document.getElementById('ResultBox');
+
+    // Array of links to be added
+    var links = [
+        // { href: 'https://bibek10550.github.io/bibek/', text: 'Bibek' },
+        // { href: 'https://bibek10550.github.io/Music/', text: 'Music' },
+        { href: 'https://bibek10550.github.io/bibeksha/qr%20code%20generator.html', text: 'Qr code generator' },
+        { href: 'https://bibek10550.github.io/linksaver/', text: 'Link Saver' },
+        { href: 'https://bibek10550.github.io/event-calendar/', text: 'Event Calendar' },
+        { href: 'https://bibek10550.github.io/calendar/', text: 'Calendar' },
+        { href: 'https://bibek10550.github.io/dailyQuote/', text: 'Daily Quotes' },
+        { href: 'https://github.com/bibek10550/pickupline', text: 'Pickup Line' },
+        { href: 'https://bibek10550.github.io/bibeksah48/youtube.html', text: 'Youtube videos' },
+        { href: 'https://bibek10550.github.io/bibeksah48/websites.html', text: 'Extensions' },
+        { href: 'https://vscode.dev/', text: 'VsCode Web' },
+        { href: 'https://insiders.vscode.dev/', text: 'Insider VsCode Web' },
+        { href: 'https://www.canva.com/', text: 'Canva' },
+        { href: 'https://1drv.ms/x/s!AiNuwFrvg4udgfoYyVdeIlivIIb4Kw?e=jrSUg6', text: 'Image prompt' },
+        { href: 'https://1drv.ms/x/s!AiNuwFrvg4udgeIa6_8F2xmN-0siQw?e=UwFk28', text: 'Music list' },
+        { href: 'https://codepen.io/pen/tour/welcome/start', text: 'Codepen html editor' },
+        { href: 'https://codepen.io/trending', text: 'Codepen search' },
+        { href: 'https://github.com/kamranahmedse/developer-roadmap?tab=readme-ov-file', text: 'Road map for CSE' },
+        { href: 'https://hacksnation.com/d/19956-github-repositories-every-developer-should-know', text: 'Github repositories for developer' },
+        { href: 'https://hacksnation.com/d/21797-chat-gpt-40-miror-sites', text: 'Chat GPT mirror sites' },
+        { href: 'https://chat.lmsys.org/', text: 'All AI for query' },
+        { href: 'https://bibek10550.github.io/kiitcse', text: 'KIIT CSE' },
+        { href: 'https://github.com/bibek10550/feedback', text: 'Feedback' },
+        { href: 'https://github.com/bibek10550/Homepage', text: 'Homepage' },
+        { href: 'https://github.com/bibek10550/CSE', text: 'CSE' },
+        { href: 'https://github.com/bibek10550/Music', text: 'Music' },
+        { href: 'https://github.com/bibek10550/bibek', text: 'bibek' },
+        { href: 'https://github.com/bibek10550/event-calendar', text: 'event-calendar' },
+        { href: 'https://github.com/bibek10550/calendar', text: 'calendar' },
+        { href: 'https://github.com/bibek10550/dailyQuote', text: 'dailyQuote' },
+        { href: 'https://github.com/bibek10550/youtube-resume-button', text: 'youtube-resume-button' },
+        { href: 'https://github.com/bibek10550/video-PIP-Instagram', text: 'video-PIP-Instagram' },
+        { href: 'https://github.com/bibek10550/showTime', text: 'showTime' },
+        { href: 'https://github.com/bibek10550/linksaver', text: 'linksaver' },
+        { href: 'https://github.com/bibek10550/pickupline', text: 'pickupline' },
+        { href: 'https://github.com/bibek10550/GoogleFormHelper', text: 'GoogleFormHelper' },
+        { href: 'https://github.com/bibek10550/documents', text: 'documents' },
+        { href: 'https://github.com/bibek10550/qr-code-reader-or-scanner', text: 'qr-code-reader-or-scanner' },
+        { href: 'https://github.com/bibek10550/bibeksah48', text: 'bibeksah48' },
+        { href: 'https://github.com/bibek10550/Water-droplet', text: 'Water-droplet' },
+        { href: 'https://github.com/bibek10550/google-search', text: 'google-search' },
+        { href: 'https://github.com/bibek10550/tutorial-point-all-pdf', text: 'tutorial-point-all-pdf' },
+        { href: 'https://github.com/bibek10550/3d-text-rotating', text: '3d-text-rotating' },
+        { href: 'https://github.com/bibek10550/Weird-Card-Design', text: 'Weird-Card-Design' },
+        { href: 'https://github.com/bibek10550/back-to-top', text: 'back-to-top' },
+        { href: 'https://github.com/bibek10550/3D-foldable-file', text: '3D-foldable-file' },
+        { href: 'https://github.com/bibek10550/custom-scroll-bar', text: 'custom-scroll-bar' },
+        { href: 'https://github.com/bibek10550/dropdown', text: 'dropdown' },
+        { href: 'https://github.com/bibek10550/light-and-dark-official', text: 'light-and-dark-official' },
+        { href: 'https://github.com/bibek10550/navigate-in-same-page', text: 'navigate-in-same-page' },
+        { href: 'https://github.com/bibek10550/parallax-mountain', text: 'parallax-mountain' },
+        { href: 'https://github.com/bibek10550/pop-up-after-load-page', text: 'pop-up-after-load-page' },
+        { href: 'https://github.com/bibek10550/pop-up-email', text: 'pop-up-email' },
+        { href: 'https://github.com/bibek10550/responsive-nav-bar', text: 'responsive-nav-bar' },
+        { href: 'https://github.com/bibek10550/responsive-signup-nav-bar', text: 'responsive-signup-nav-bar' },
+        { href: 'https://github.com/bibek10550/slide-show-with-nav-indicator', text: 'slide-show-with-nav-indicator' },
+        { href: 'https://github.com/bibek10550/sticky-nav-bar', text: 'sticky-nav-bar' },
+        { href: 'https://github.com/bibek10550/text-typing-loading-animation-effects', text: 'text-typing-loading-animation-effects' },
+        { href: 'https://github.com/bibek10550/card', text: 'card' },
+        { href: 'https://github.com/bibek10550/chat-bot', text: 'chat-bot' },
+        { href: 'https://github.com/bibek10550/3d-effect', text: '3d-effect' },
+        { href: 'https://github.com/bibek10550/double-nav-barr', text: 'double-nav-barr' },
+        { href: 'https://github.com/bibek10550/css-border', text: 'css-border' },
+        { href: 'https://github.com/bibek10550/double-nav-bar', text: 'double-nav-bar' },
+        { href: 'https://github.com/bibek10550/small-piece-of-paper-falling-down', text: 'small-piece-of-paper-falling-down' },
+        { href: 'https://github.com/bibek10550/working-google-search-engine', text: 'working-google-search-engine' },
+        { href: 'https://github.com/bibek10550/image-comparison', text: 'image-comparison' },
+        { href: 'https://github.com/bibek10550/Template', text: 'Template' },
+        // { href: 'https', text: 'Link' },
+        // Add more links as needed
+    ];
+
+    // Loop through the links array
+    links.forEach(function (linkInfo) {
+        // Create a new list item element
+        var newItem = document.createElement('li');
+
+        // Create a new anchor element for the link
+        var newLink = document.createElement('a');
+        newLink.href = linkInfo.href;
+        newLink.textContent = linkInfo.text;
+
+        // Append the anchor element to the list item element
+        newItem.appendChild(newLink);
+
+        // Append the new list item to the search results list
+        searchResultsList.appendChild(newItem);
+    });
+});
+
+
+
+
+
+
+
+
 // dynamic footer
 // Get the .footContainer element
 var navigationBar = document.querySelector('.footerContainer');
@@ -410,6 +670,7 @@ var pageImageMap = {
     'page-1.html': 'https://camo.githubusercontent.com/a2479cf83f41cb42809db52097d0ead674d2d8beb20ec1838e16db8ff92eafde/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373706167652d31266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
     'projects.html': 'https://camo.githubusercontent.com/b89204ae59b6d8b2219c804cb5331b01d8bcf021544d465fd09fb86f8c9c1b8a/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b313035353062637370726f6a656374736167652d31266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
     'telegram.html': 'https://camo.githubusercontent.com/cc17043423f4e8e1ae016f01d79770b831eb6c83fdcd75101c69938ba45c3599/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b313035353062637374656c656772616d266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
+    'prompt.html': 'https://camo.githubusercontent.com/daf53c81dba158aaf8217358599264220cf1367919d757d3c162e37cc8e397a7/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b313035353062637370726f6d7074266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
     'term&conditions.html': 'https://camo.githubusercontent.com/09dd4ec2fb6d5ae9e96a912b2056bc0ac110d66ec7f79beb4b433c80020465a9/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b31303535306263737465726d26636f6e646974696f6e73266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
     'thankyou.html': 'https://camo.githubusercontent.com/d518f25277cd7cbed3ecd8f53d65431e0704c82e29ca75788ce77d115bd156a0/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b31303535306263737468616e6b796f75266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
     '404.html': 'https://camo.githubusercontent.com/8e6354e5091fe8ad7b5c8ba2a733ef54a625aea8bedaebcda4febd46738920e0/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373343034266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174',
@@ -1498,39 +1759,39 @@ generateHtmlCssElements();
 
 
 
-// Function to filter data based on search query
-function searchData(query, data) {
-    // Convert query to lowercase for case-insensitive search
-    const lowerCaseQuery = query.toLowerCase();
+// // Function to filter data based on search query
+// function searchData(query, data) {
+//     // Convert query to lowercase for case-insensitive search
+//     const lowerCaseQuery = query.toLowerCase();
 
-    // Hide all items first
-    $('.itemBox').hide(); // Hide items without animation
+//     // Hide all items first
+//     $('.itemBox').hide(); // Hide items without animation
 
-    // Show items that match the search query
-    data.forEach(entry => {
-        const matchTypeFilter = entry.ProjectTypeFilters.some(filter => filter.toLowerCase().includes(lowerCaseQuery));
-        const matchName = entry.ProjectName.toLowerCase().includes(lowerCaseQuery);
-        const matchDescription = entry.ProjectDescription.toLowerCase().includes(lowerCaseQuery);
-        if (matchTypeFilter || matchName || matchDescription) {
-            $(`.itemBox.${entry.ProjectTypeFilters.join('.')}`).show(); // Show items without animation
-        }
-    });
-}
+//     // Show items that match the search query
+//     data.forEach(entry => {
+//         const matchTypeFilter = entry.ProjectTypeFilters.some(filter => filter.toLowerCase().includes(lowerCaseQuery));
+//         const matchName = entry.ProjectName.toLowerCase().includes(lowerCaseQuery);
+//         const matchDescription = entry.ProjectDescription.toLowerCase().includes(lowerCaseQuery);
+//         if (matchTypeFilter || matchName || matchDescription) {
+//             $(`.itemBox.${entry.ProjectTypeFilters.join('.')}`).show(); // Show items without animation
+//         }
+//     });
+// }
 
-// Event listener for search input
-$('#noteTopicInput').on('input', function () {
-    const query = $(this).val().trim();
-    if (query === '') {
-        // If search input is empty, show all items without animation
-        $('.itemBox').show(); // Show items without animation
-    } else {
-        // Filter data based on search query without animation
-        searchData(query, HtmlCssData);
-        searchData(query, JavaScriptData);
-        searchData(query, ProjectData);
-        // searchData(query, TelegramData);
-    }
-});
+// // Event listener for search input
+// $('#noteTopicInput').on('input', function () {
+//     const query = $(this).val().trim();
+//     if (query === '') {
+//         // If search input is empty, show all items without animation
+//         $('.itemBox').show(); // Show items without animation
+//     } else {
+//         // Filter data based on search query without animation
+//         searchData(query, HtmlCssData);
+//         // searchData(query, JavaScriptData);
+//         // searchData(query, ProjectData);
+//         // searchData(query, TelegramData);
+//     }
+// });
 
 
 
@@ -2080,10 +2341,10 @@ generateTelegramElements();
 
 
 
-// Get all elements with the class "copylink"
+// Get all elements with the class "copylink" within ".TelegramContainer"
 window.addEventListener("load", () => {
     // Get all elements with the class "copylink"
-    var copyLinks = document.querySelectorAll('.copylink');
+    var copyLinks = document.querySelectorAll('.TelegramContainer .copylink');
 
     // Add click event listener to each copylink element
     copyLinks.forEach(function (link) {
@@ -2130,6 +2391,126 @@ window.addEventListener("load", () => {
     });
 });
 
+
+
+
+
+
+
+// Prompt data
+// Initialize an empty array to store the Prompt data
+let PromptData = [];
+
+// Function to update the Prompt data with new entries
+function updatePromptData(...entries) {
+    // Loop through each entry in the arguments
+    for (let i = 0; i < entries.length; i += 3) {
+        let ProjectTypeFilters = entries[i].split(' '); // Split filters into an array
+        let ProjectName = entries[i + 1];
+        let ProjectDescription = entries[i + 2];
+
+        // Push new data to the PromptData array
+        PromptData.push({
+            "ProjectTypeFilters": ProjectTypeFilters, // Store multiple filters as an array
+            "ProjectName": ProjectName,
+            "ProjectDescription": ProjectDescription,
+        });
+    }
+}
+
+// Function to generate HTML elements for Prompt based on Prompt data
+function generatePromptElements() {
+    // Get the container where Prompt elements will be appended
+    let PromptContainer = document.querySelector('.PromptContainer');
+
+    // Clear previous content
+    // PromptContainer.innerHTML = '';
+
+    // Loop through each Telegram entry in the PromptData array
+    PromptData.forEach(entry => {
+        // Create a new Prompt card element
+        let PromptCard = document.createElement('div');
+        PromptCard.classList.add('col', 'itemBox');
+        entry.ProjectTypeFilters.forEach(filter => {
+            PromptCard.classList.add(filter); // Add each filter as a class
+        });
+        PromptCard.setAttribute('data-aos', 'fade-up');
+
+        // Construct the HTML for the Prompt card
+        PromptCard.innerHTML = `
+        <div class="card mb-1" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">${entry.ProjectName}</h5>
+                        <i class="copylink fa fa-clone" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Copy Link" title="Copy Link" onclick="copyDescriptionToClipboard('${entry.ProjectDescription}')"></i>
+                        <p class="card-text">${entry.ProjectDescription}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        // Append the Prompt card to the Prompt container
+        PromptContainer.appendChild(PromptCard);
+    });
+}
+// Generate Prompt elements
+generatePromptElements();
+
+
+
+
+
+
+// // Add click event listener to the document and delegate it to the .promptContainer class
+// document.addEventListener('click', function(event) {
+//     if (event.target.classList.contains('fa-clone')) {
+//         // Find the parent .itemBox and get the ProjectDescription text
+//         var description = event.target.closest('.itemBox').querySelector('.card-text').innerText;
+//         copyDescriptionToClipboard(description);
+//     }
+// });
+
+
+
+
+// Function to copy ProjectDescription to clipboard
+function copyDescriptionToClipboard(description) {
+    // Create a temporary textarea element
+    var tempTextArea = document.createElement('textarea');
+    tempTextArea.value = description;
+    document.body.appendChild(tempTextArea);
+
+    // Select the text within the textarea
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the selected text
+    document.execCommand('copy');
+
+    // Remove the textarea
+    document.body.removeChild(tempTextArea);
+
+
+
+    // Find the clicked copy icon within the promptContainer and replace it with check mark icon temporarily
+    var copyIcon = event.target;
+    if (copyIcon.closest('.promptContainer')) {
+        copyIcon.classList.remove('fa-clone');
+        copyIcon.classList.add('fa-check-circle-o');
+
+        // Reset the copy icon after 2 seconds
+        setTimeout(function () {
+            copyIcon.classList.remove('fa-check-circle-o');
+            copyIcon.classList.add('fa-clone');
+        }, 2000);
+    }
+
+    // Show a toast or alert to indicate successful copying (optional)
+    // You can customize this part according to your UI/UX
+    console.log('Description copied to clipboard! :- ' + description);
+}
 
 
 
