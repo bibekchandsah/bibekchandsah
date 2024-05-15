@@ -988,6 +988,7 @@ img {
         right: 0px;
         left: 15px;
     }
+
     .result-box {
         width: 320px;
     }
@@ -1051,22 +1052,25 @@ img {
 /* html&css */
 .HtmlCssContainer .col.itemBox:hover .card,
 .JavaScriptContainer .col.itemBox:hover .card,
-.ProjectContainer .col.itemBox:hover .card {
-    scale: 1.1;
+.ProjectContainer .col.itemBox:hover .card,
+.SoftwareContainer .col.itemBox:hover .card {
+    scale: 1.08;
     transform: translateY(-15px);
     transition: transform 0.5s ease;
 }
 
 .HtmlCssContainer .card a,
 .JavaScriptContainer .card a,
-.ProjectContainer .card a {
+.ProjectContainer .card a,
+.SoftwareContainer .card a {
     overflow: hidden;
     border-radius: 0.375rem 0.375rem 0rem 0rem;
 }
 
 .HtmlCssContainer .col.itemBox:hover .card img,
 .JavaScriptContainer .col.itemBox:hover .card img,
-.ProjectContainer .col.itemBox:hover .card img {
+.ProjectContainer .col.itemBox:hover .card img,
+.SoftwareContainer .col.itemBox:hover .card img {
     transform: scale(1.2);
     /* Increase the scale (zoom) of the image on hover */
 }
@@ -1227,6 +1231,18 @@ img {
 
 
 
+
+
+
+/* software */
+.SoftwareContainer p.card-text {
+    height: 96px;
+    overflow: auto;
+}
+
+.SoftwareContainer .itemBox .row{
+    align-items: center;
+}
 
 
 /* videos */
