@@ -1053,6 +1053,7 @@ img {
 .HtmlCssContainer .col.itemBox:hover .card,
 .JavaScriptContainer .col.itemBox:hover .card,
 .ProjectContainer .col.itemBox:hover .card,
+.TelegramContainer .col.itemBox:hover .card,
 .SoftwareContainer .col.itemBox:hover .card {
     scale: 1.08;
     transform: translateY(-15px);
