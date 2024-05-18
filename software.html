@@ -67,13 +67,49 @@
     <div class="toolContainer">
         <!-- dynamic tool container 👇🏻 -->
     </div>
+    <!-- <div class="alert alert-primary" role="alert">
+        A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div> -->
+    <div class="alert alert-warning alert-dismissible fade show mt-5 gy-lg-5 stickyAlert" role="alert">
+        If you want that the downloaded software doesn't get connected with internet then make sure to use  <a href="https://github.com/bibek10550/software/blob/main/firewall%20(enable%20%2C%20disable).bat" class="alert-link">Firewall</a>. Run the script as <strong>administrator</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- modal Disclaimer -->
+    <div class="modal fade p-4 py-md-5 modal-sheet SoftwareModal" id="modalChoice" tabindex="-1" role="dialog" aria-labelledby="modalChoiceLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-3 shadow">
+                <div class="modal-body p-4">
+                    <h5 class="mb-0 text-center fw-bold">Software Disclaimer</h5>
+                    <p class="mb-0 lead text-center">The Software is provided for your convenience, and you agree to use it at your own risk. While we have taken measures to ensure the reliability and functionality of the Software, we cannot guarantee its accuracy, completeness, or suitability for any purpose.</p>
+                    <p class="lead">By using the software provided on this website, you agree to the following:</p>
+                    <ul>
+                        <li>Use at your own risk.</li>
+                        <li>No warranties, express or implied.</li>
+                        <li>We are not liable for any damages.</li>
+                        <li>Respect intellectual property rights.</li>
+                        <li>Third-party software may have its own terms.</li>
+                        <li>Updates and maintenance are not guaranteed.</li>
+                    </ul>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault"> Don't show again </label>
+                </div>
+                <div class="modal-footer flex-nowrap p-0">
+                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end" id="agreeButton" data-bs-dismiss="modal"><strong>Yes, agree</strong></button>
+                    <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0"><a href="index.html">Not agree</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- <===== buttons =====> -->
     <div class="d-flex gap-2 justify-content-center py-5 toolBadge mt-5 visually-hidden">
         <button class="filter btn btn-primary rounded-pill active" data-filter="Reset" type="reset" value="Reset">Reset</button>
         <button class="filter btn btn-primary rounded-pill" data-filter="HTML" type="button" title="HTML">HTML</button>
     </div>
     <!-- search section -->
-    <form class="row gy-5 gx-5 mt-5 align-items-center justify-content-center searchbox">
+    <form class="row gy-2 gx-2 mt-2 align-items-center justify-content-center searchbox">
         <div class="col-sm-3 input-group w-auto">
             <span class="input-group-text" id="basic-addon1">Search</span>
             <input type="text" autocomplete="off" class="form-control" aria-label="topic" aria-describedby="basic-addon1" id="noteTopicInput">
@@ -142,6 +178,41 @@
         })
 
 
+
+        // Software disclaimer modal
+        document.addEventListener('DOMContentLoaded', function () {
+            const modalChoice = new bootstrap.Modal(document.getElementById('modalChoice'));
+            const flexCheckDefault = document.getElementById('flexCheckDefault');
+            const agreeButton = document.getElementById('agreeButton');
+
+            const checkModalDisplay = () => {
+                const dontShowAgain = localStorage.getItem('dontShowAgain');
+                if (dontShowAgain) {
+                    const dontShowAgainTime = new Date(dontShowAgain);
+                    const now = new Date();
+                    const diffTime = Math.abs(now - dontShowAgainTime);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    if (diffDays < 7) {
+                        return false;
+                    }
+                }
+                return true;
+            };
+
+            if (checkModalDisplay()) {
+                setTimeout(() => {
+                    modalChoice.show();
+                }, 1000);
+            }
+
+            agreeButton.addEventListener('click', () => {
+                if (flexCheckDefault.checked) {
+                    const now = new Date();
+                    localStorage.setItem('dontShowAgain', now.toISOString());
+                }
+                modalChoice.hide();
+            });
+        });
 
 
         // Call the function to update Software data
@@ -314,11 +385,11 @@
             "https://logodix.com/logo/652495.png",
             "VMware key is a text file containing license keys or serial numbers for VMware products. These keys are used to activate VMware software and access its full functionality.",
             "Windows",
+            "https://u.pcloud.link/publink/show?code=XZKNfj0ZQTPcmxrz1P4w1gnRd7oMUkgc75tk",
+            "Key",
             "https://raw.githubusercontent.com/bibek10550/software/main/VMware%20key.txt",
-            "",
-            "",
-            "",
-            "",
+            "Telegram Link",
+            "https://t.me/bibekcs/211",
 
 
 
@@ -420,6 +491,200 @@
 
 
 
+            "internet download manager",
+            "Internet Download Manager",
+            "https://www.internetdownloadmanager.com/",
+            "https://thuthuattienich.vn/sites/default/files/styles/150x150/public/idm.png?itok=3J-clbiL",
+            "Internet Download Manager (IDM) is a tool to increase download speeds by up to 5 times, resume and schedule downloads. It has a comprehensive error recovery and resume capability that will restart broken or interrupted downloads due to lost connections, network problems, computer shutdowns, or unexpected power outages.",
+            "Windows",
+            "https://raw.githubusercontent.com/bibek10550/software/main/Internet%20Download%20Manager%206.42%20Build%2010.zip",
+            "Telegram Link",
+            "https://t.me/bibekcs/210",
+            "",
+            "",
+
+
+            "utorrent client",
+            "uTorrent Pro",
+            "https://www.utorrent.com/desktop/",
+            "https://www.freeiconspng.com/download/11235",
+            "uTorrent Pro is an advanced version of the popular uTorrent torrent client, offering additional features like streaming torrents while downloading, protection against malware and viruses, and access to new updates and features.",
+            "Windows",
+            "https://raw.githubusercontent.com/bibek10550/software/main/uTorrent%20Pro%203.6.0%20Build%2047062%20with%20Patch.zip",
+            "Telegram Link",
+            "https://t.me/bibekcs/206",
+            "",
+            "",
+
+
+            "hacker view",
+            "eDEX-UI",
+            "https://github.com/GitSquared/edex-ui",
+            "https://cdn.icon-icons.com/icons2/3053/PNG/512/edex_ui_macos_bigsur_icon_189512.png",
+            "eDEX-UI is a fullscreen, cross-platform terminal emulator and system monitor that looks and feels like a sci-fi computer interface.",
+            "Windows",
+            "https://github.com/GitSquared/edex-ui/releases/download/v2.2.8/eDEX-UI-Windows.exe",
+            "",
+            "",
+            "",
+            "",
+
+
+            "adobe acrobat pdf reader",
+            "Adobe Acrobat",
+            "https://acrobat.adobe.com/",
+            "https://cdn.icon-icons.com/icons2/56/PNG/512/metro_adobeacrobat_11474.png",
+            "Adobe Acrobat is a software used to create, view, and edit PDF files. It is essential for managing, sharing, and securing digital documents.",
+            "Window",
+            "http://u.pc.cd/FGj7",
+            "Telegram Link",
+            "https://t.me/bibekcs/209",
+            "",
+            "",
+
+
+            "autoCad auto cad",
+            "AutoCad",
+            "https://www.autodesk.com/products/autocad/",
+            "https://seeklogo.com/images/A/autocad-logo-69326D7728-seeklogo.com.png",
+            "AutoCAD, developed by Autodesk, is a leading computer-aided design (CAD) software used for creating precise 2D and 3D designs, models, and blueprints. It's widely utilized across industries such as architecture, engineering, and manufacturing to streamline design processes and enhance productivity.",
+            "Windows",
+            "http://u.pc.cd/F7q",
+            "",
+            "",
+            "",
+            "",
+
+
+            "bootstrap studio",
+            "Bootstrap Studio",
+            "https://bootstrapstudio.io/",
+            "https://bootstrapstudio.io/assets/img/logo_128.png",
+            "Bootstrap Studio is a desktop application for building websites and web apps with the Bootstrap framework. It offers a user-friendly interface and drag-and-drop functionality for rapid prototyping and design.",
+            "Windows",
+            "https://u.pcloud.link/publink/show?code=XZiSfj0ZOyFMBAL94DFuuC0eTgxBDRBUOzQV",
+            "Telegram Link",
+            "https://t.me/bibekcs/71",
+            "",
+            "",
+
+
+            "malwarebytes antivirus",
+            "Malwarebytes",
+            "https://www.malwarebytes.com/",
+            "https://cdn.icon-icons.com/icons2/3053/PNG/512/malwarebytes_macos_bigsur_icon_189999.png",
+            "Malwarebytes is an anti-malware software designed to detect and remove various forms of malware from computers. It offers real-time protection, scheduled scans, and automatic updates to safeguard against viruses, ransomware, spyware, and other malicious threats.",
+            "Windows",
+            "http://u.pc.cd/yFgrtalK",
+            "Telegram Link",
+            "https://t.me/bibekcs/187",
+            "",
+            "",
+
+
+            "drfone android iphone toolkit",
+            "Drfone toolkit",
+            "https://drfone.wondershare.com/drfone-toolkit.html",
+            "https://i.pinimg.com/originals/71/f5/85/71f585c8e266378121199e4d01562fe0.png",
+            "Dr.Fone is a software suite by Wondershare designed for data recovery and management on smartphones. It helps users recover lost data, transfer files, fix system issues, and manage their mobile devices efficiently.",
+            "Windows",
+            "https://u.pcloud.link/publink/show?code=XZvhQj0ZaD6hOSCw58LOFFIT0EpV5uRXePjX",
+            "Telegram Link",
+            "https://t.me/bibekcs/75",
+            "",
+            "",
+
+
+            "window password recovery",
+            "Passfab for window key",
+            "https://www.passfab.com/products/windows-password-recovery.html",
+            "https://www.passfab.com/images/pf-v2/products/pf-4winkey.svg",
+            "PassFab 4WinKey is a password recovery tool designed to help users reset or remove forgotten or lost Windows passwords. It's commonly used to regain access to locked accounts on Windows PCs and laptops without requiring a system reinstall.",
+            "Windows",
+            "https://u.pcloud.link/publink/show?code=XZdlfj0ZlrkbM7RilnFkLyhqu05Ix0TF6QaX",
+            "Telegram Link",
+            "https://t.me/bibekcs/185",
+            "",
+            "",
+
+
+            "office window password recovery product key recovery",
+            "PassFab ToolKit",
+            "https://www.passfab.com/products/office-password-recovery.html",
+            "https://www.passfab.jp/images/box/passfab-toolkit.webp",
+            "PassFab ToolKit is a comprehensive software suite that provides various tools for office password recovery, product key recovery, and window password recovery. It's designed to help users manage and resolve a range of issues on their devices, such as unlocking passwords, product key recovery, and window password recovery problems.",
+            "Windows",
+            "https://u.pcloud.link/publink/show?code=XZKIfj0ZoeUURgxkvgy8PFoROlE7iFCWmLOX",
+            "Telegram Link",
+            "https://t.me/bibekcs/203",
+            "",
+            "",
+
+
+            "pdf editor compress",
+            "PDF24 Creator",
+            "https://tools.pdf24.org/en/creator",
+            "https://tools.pdf24.org/static/img/pageIcons/svg/default.svg?v=5cae54fd",
+            "PDF24 Creator is a software tool for creating, editing, and converting PDF files. It provides features such as merging, splitting, compressing, and securing PDFs, making it a versatile tool for managing PDF documents efficiently.",
+            "Windows",
+            "https://download.pdf24.org/pdf24-creator-11.17.0-x64.exe",
+            "",
+            "",
+            "",
+            "",
+
+
+            "video editor convertor",
+            "Wondershare UniConverter",
+            "https://videoconverter.wondershare.com/",
+            "https://avatars.githubusercontent.com/u/84499778?v=4",
+            "Wondershare UniConverter is a multimedia software that allows users to convert video and audio files into various formats. It also offers features for video editing, DVD burning, video downloading, and file compression, making it a versatile tool for managing and converting media files.",
+            "Windows",
+            "https://u.pcloud.link/publink/show?code=XZFafj0Zl6xuVnRmOcffU85VDGWqA8xNfGKV",
+            "",
+            "",
+            "",
+            "",
+
+
+            "firewall block incoming outgoing connection",
+            "Firewall ",
+            "https://github.com/bibek10550/software/blob/main/firewall%20(enable%20%2C%20disable).bat",
+            "https://cdn1.iconfinder.com/data/icons/multimedia-and-security/53/82-512.png",
+            "This script is now user-friendly and flexible, allowing the user to block or enable outbound, inbound, or both types of connections for a specific program or all programs.Use it as administrator and give the application path and name of application.",
+            "Script",
+            "https://github.com/bibek10550/software/blob/main/firewall%20(enable%20%2C%20disable).bat",
+            "",
+            "",
+            "",
+            "",
+
+
+            // "filter",
+            // "name",
+            // "link",
+            // "img_link",
+            // "desc",
+            // "1stName",
+            // "1stLink",
+            // "",
+            // "",
+            // "",
+            // "",
+
+
+            // "filter",
+            // "name",
+            // "link",
+            // "img_link",
+            // "desc",
+            // "1stName",
+            // "1stLink",
+            // "",
+            // "",
+            // "",
+            // "",
+            // 
 
 
 
