@@ -617,9 +617,9 @@ navigationBar.innerHTML += `
                 <span class="mb-3 mb-md-0 text-body-secondary" id="copyrightNotice"></span>
             </div>
             <ul class="list-unstyled d-flex footerBadge">
-                <li class="ms-3"><a href="https://www.facebook.com/bibek.sha.1432/" title="facebook"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
+                <li class="ms-3"><a href="https://www.facebook.com/bibek.sha.1432/" target="_blank" title="facebook"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
                             <img class="rounded-circle me-1" width="24" height="24" src="https://bibek10550.github.io/kiitcse/assets/image/facebook.png" alt="facebook logo">Facebook </span></a> </li>
-                <li class="ms-3"><a href="https://www.instagram.com/bibeksha1432/" title="instagram"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
+                <li class="ms-3"><a href="https://www.instagram.com/bibeksha1432/" target="_blank" title="instagram"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
                             <img class="rounded-circle me-1" width="24" height="24" src="https://bibek10550.github.io/kiitcse/assets/image/instagram.png" alt="instagram logo">Instagram </span></a></li>
                 <li class="ms-3"><a href="mailto:bibeksha48@gmail.com" title="Send Message"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
                             <img class="rounded-circle me-1" width="24" height="24" src="https://bibek10550.github.io/kiitcse/assets/image/gmail.png" alt="gmail logo">Gmail </span></a> </li>
@@ -966,21 +966,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Loop through each link
     links.forEach(link => {
         link.addEventListener('mouseenter', (event) => {
-            // Save the href in a data attribute and remove it from href
+            // Save the href and target in data attributes and remove them
             link.dataset.href = link.href;
+            link.dataset.target = link.target;
             link.removeAttribute('href');
+            link.removeAttribute('target');
         });
 
         link.addEventListener('mouseleave', (event) => {
-            // Restore the href from the data attribute
+            // Restore the href and target from the data attributes
             link.setAttribute('href', link.dataset.href);
+            link.setAttribute('target', link.dataset.target);
         });
 
         link.addEventListener('click', (event) => {
-            // Prevent default click behavior
-            event.preventDefault();
-            // Navigate to the saved href
-            window.location.href = link.dataset.href;
+            // Restore the href and target from the data attributes before click is processed
+            link.setAttribute('href', link.dataset.href);
+            link.setAttribute('target', link.dataset.target);
         });
     });
 });
@@ -1038,7 +1040,7 @@ function createCardMostPopular(cardInfo) {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold"><a href="${cardInfo.link}">${cardInfo.name}</a></h5>
+                    <h5 class="card-title fw-bold"><a href="${cardInfo.link}" target="_blank">${cardInfo.name}</a></h5>
                     <p class="card-text">${cardInfo.description}</p>
                 </div>
             </div>
@@ -1110,7 +1112,7 @@ function createCard(cardInfo) {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold"><a href="${cardInfo.link}">${cardInfo.name}</a></h5>
+                    <h5 class="card-title fw-bold"><a href="${cardInfo.link}" target="_blank">${cardInfo.name}</a></h5>
                     <p class="card-text">${cardInfo.description}</p>
                 </div>
             </div>
@@ -1492,7 +1494,7 @@ function createCardProject1(cardInfo) {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold"><a href="${cardInfo.link}">${cardInfo.name}</a></h5>
+                    <h5 class="card-title fw-bold"><a href="${cardInfo.link}" target="_blank">${cardInfo.name}</a></h5>
                     <p class="card-text">${cardInfo.description}</p>
                 </div>
             </div>
@@ -1686,11 +1688,11 @@ function generateHtmlCssElements() {
         // Construct the HTML for the HtmlCss card
         HtmlCssCard.innerHTML = `
             <div class="card h-100">
-                <a href="${entry.ProjectLink}">
+                <a href="${entry.ProjectLink}" target="_blank">
                     <img src="${entry.ProjectImageLink}" class="card-img-top" alt="${entry.ProjectName}" />
                 </a>
                 <div class="card-body">
-                    <a class="ProjectHeading" href="${entry.ProjectLink}">
+                    <a class="ProjectHeading" href="${entry.ProjectLink}" target="_blank">
                         <h5 class="card-title">${entry.ProjectName}</h5>
                     </a>
                     <p class="card-text text-center">${entry.ProjectDescription}</p>
@@ -1945,11 +1947,11 @@ function generateJavaScriptElements() {
         // Construct the HTML for the JavaScript card
         JavaScriptCard.innerHTML = `
             <div class="card h-100">
-                <a href="${entry.ProjectLink}">
+                <a href="${entry.ProjectLink}" target="_blank">
                     <img src="${entry.ProjectImageLink}" class="card-img-top" alt="${entry.ProjectName}" />
                 </a>
                 <div class="card-body">
-                    <a class="ProjectHeading" href="${entry.ProjectLink}">
+                    <a class="ProjectHeading" href="${entry.ProjectLink}" target="_blank">
                         <h5 class="card-title">${entry.ProjectName}</h5>
                     </a>
                     <p class="card-text text-center">${entry.ProjectDescription}</p>
@@ -2090,11 +2092,11 @@ function generateProjectElements() {
         // Construct the HTML for the Project card
         ProjectCard.innerHTML = `
             <div class="card h-100">
-                <a href="${entry.ProjectLink}">
+                <a href="${entry.ProjectLink}" target="_blank">
                     <img src="${entry.ProjectImageLink}" class="card-img-top" alt="${entry.ProjectName}" />
                 </a>
                 <div class="card-body">
-                    <a class="ProjectHeading" href="${entry.ProjectLink}">
+                    <a class="ProjectHeading" href="${entry.ProjectLink}" target="_blank">
                         <h5 class="card-title">${entry.ProjectName}</h5>
                     </a>
                     <p class="card-text text-center">${entry.ProjectDescription}</p>
@@ -2234,7 +2236,7 @@ function generateTelegramElements() {
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold"><a href="${entry.ProjectLink}">${entry.ProjectName}</a></h5>
+                        <h5 class="card-title fw-bold"><a href="${entry.ProjectLink}" target="_blank">${entry.ProjectName}</a></h5>
                         <i class="copylink fa fa-clone" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Copy Link" title="Copy Link"></i>
                         <p class="card-text">${entry.ProjectDescription}</p>
                     </div>
@@ -2623,7 +2625,7 @@ function generateSoftwareElements() {
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title fw-bold"><a href="${entry.ProjectLink}">${entry.ProjectName}</a></h5>
+                        <h5 class="card-title fw-bold"><a href="${entry.ProjectLink}" target="_blank">${entry.ProjectName}</a></h5>
                         <p class="card-text">${entry.ProjectDescription}</p>
                     </div>
                     <div class="btn-group float-end downloadButton" role="group">
