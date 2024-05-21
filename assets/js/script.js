@@ -958,6 +958,36 @@ toolContainer.appendChild(toolContainerDiv);
 
 
 
+// hide the default link view
+window.addEventListener('DOMContentLoaded', (event) => {
+    // Get all the links on the page
+    const links = document.querySelectorAll('a');
+
+    // Loop through each link
+    links.forEach(link => {
+        link.addEventListener('mouseenter', (event) => {
+            // Save the href in a data attribute and remove it from href
+            link.dataset.href = link.href;
+            link.removeAttribute('href');
+        });
+
+        link.addEventListener('mouseleave', (event) => {
+            // Restore the href from the data attribute
+            link.setAttribute('href', link.dataset.href);
+        });
+
+        link.addEventListener('click', (event) => {
+            // Prevent default click behavior
+            event.preventDefault();
+            // Navigate to the saved href
+            window.location.href = link.dataset.href;
+        });
+    });
+});
+
+
+
+
 
 
 
