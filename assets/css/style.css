@@ -74,7 +74,7 @@ body {
 @keyframes ClipPathAnimationLight {
     0% {
         /* clip-path: circle(0% at 100% 0%); */
-        clip-path: polygon(0 0, 100% 0, 100% 3%, 0 3%);
+        clip-path: polygon(-20% -20%, 120% -20%, 120% 3%, -20% 3%);
     }
 
     100% {
@@ -86,7 +86,7 @@ body {
 @keyframes ClipPathAnimationDark {
     0% {
         /* clip-path: circle(0% at 100% 0%); */
-        clip-path: polygon(0 0, 100% 0, 100% 3%, 0 3%);
+        clip-path: polygon(-20% -20%, 120% -20%, 120% 3%, -20% 3%);
     }
 
     /* 99% {
@@ -112,12 +112,13 @@ a {
 }
 
 a:hover{
-    color: var(--primary-hover-color) !important;
+    /* color: var(--primary-hover-color) !important; */
 }
 
 /* disable highlighted blue color */
 button:focus, a:focus {
     outline: none;
+    box-shadow: none;
 }
 
 .navbar-toggler:focus {
@@ -128,6 +129,12 @@ button:focus, a:focus {
 .input-group.form-select:focus {
     outline: none !important;
     box-shadow: none;
+}
+
+
+.fade:not(.show) {
+    opacity: 0;
+    display: none !important;
 }
 
 /*========== SCROLL BAR ==========*/
@@ -167,6 +174,11 @@ button:focus, a:focus {
 
 .theme {
     margin-right: 7px;
+}
+
+.newBadge{
+    margin-left: 10px;
+    background-color: var(--primary-color) !important;
 }
 
 
@@ -1019,6 +1031,54 @@ img {
 
 
 
+
+
+
+/* update container */
+.updateContainer{
+    position: fixed !important;
+    display: flex;
+    align-content: center;
+    background-color: #2221217d !important;
+    backdrop-filter: blur(3px);
+}
+
+.updateContainerIcon{
+    font-size: 48px;
+    margin-top: -10px;
+}
+
+.updateContainer .bi-arrow-right-short{
+    margin-left: 5px;
+    cursor: pointer;
+    color: var(--primary-color);
+    border-radius: 50%;
+    padding: 0px 3px;
+}
+.updateContainer .bi-arrow-right-short:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 900;
+}
+
+.updateContainer .bi-file-medical{
+    color: #ffc107;
+}
+.updateContainer .bi-telegram{
+    color: #0d6efd;
+}
+.updateContainer .bi-microsoft{
+    color: #0d6efd;
+}
+.updateContainer .bi-search,
+.updateContainer .bi-calendar-month{
+    color: var(--primary-color);
+}
+
+
+
+
+
 /* Downloads */
 .downloadButton {
     bottom: 5px;
@@ -1280,11 +1340,6 @@ img {
     padding-bottom: 2em;
 }
 
-.fade:not(.show) {
-    opacity: 0;
-    display: none;
-}
-
 .mt-5 {
     margin-top: 5rem !important;
 }
@@ -1293,17 +1348,4 @@ img {
     position: sticky;
     top: 57px;
     z-index: 99;
-}
-
-/* videos */
-.video-container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-video {
-    max-width: 100%;
-    max-height: 100%;
 }

@@ -52,8 +52,8 @@ navigationBar.innerHTML += `
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Others </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item telegram" href="telegram.html">Telegram Channels</a></li>
-                            <li><a class="dropdown-item prompt" href="prompt.html">Prompts</a></li>
-                            <li><a class="dropdown-item software" href="software.html">Software</a></li>
+                            <li><a class="dropdown-item prompt" href="prompt.html">Prompts<span class="badge newBadge text-bg-primary">New</span></a></li>
+                            <li><a class="dropdown-item software" href="software.html">Software<span class="badge newBadge text-bg-primary">New</span></a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

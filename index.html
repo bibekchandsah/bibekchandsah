@@ -65,6 +65,59 @@
     <div class="toolContainer">
         <!-- dynamic tool container 👇🏻 -->
     </div>
+    <!-- updates container -->
+    <div class="modal fade modal-sheet position-static d-block bg-body-secondary p-4 py-md-5 updateContainer" id="modalChoice" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-body p-5">
+                    <h2 class="fw-bold mb-0">What's new</h2>
+                    <ul class="d-grid gap-4 my-5 list-unstyled small">
+                        <li class="d-flex gap-4">
+                            <i class="bi bi-cloud-moon updateContainerIcon"></i>
+                            <div>
+                                <h5 class="mb-0">Theme</h5>
+                                <p class="p-0 m-0">Alt + L for Light Mode</p>
+                                <p class="p-0 m-0">Alt + D for Dark Mode</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-4">
+                            <i class="bi bi-search updateContainerIcon"></i>
+                            <div>
+                                <h5 class="mb-0">Search</h5>
+                                <p class="p-0 m-0">Alt + S for Search</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-4">
+                            <i class="bi bi-calendar-month updateContainerIcon"></i>
+                            <div>
+                                <h5 class="mb-0">Calendar</h5>
+                                <p class="p-0 m-0">Alt + C for Calendar</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-4">
+                            <i class="bi bi-file-medical updateContainerIcon"></i>
+                            <div>
+                                <h5 class="mb-0">Projects<a href="page-1.html" target="_blank"><i class="bi bi-arrow-right-short"></i></a></h5> Helpful in Web development.
+                            </div>
+                        </li>
+                        <li class="d-flex gap-4">
+                            <i class="bi bi-telegram updateContainerIcon"></i>
+                            <div>
+                                <h5 class="mb-0">Telegram Channels<a href="telegram.html" target="_blank"><i class="bi bi-arrow-right-short"></i></a></h5> Lots of useful telegram channels.
+                            </div>
+                        </li>
+                        <li class="d-flex gap-4">
+                            <i class="bi bi-microsoft updateContainerIcon"></i>
+                            <div>
+                                <h5 class="mb-0">Software<a href="software.html" target="_blank"><i class="bi bi-arrow-right-short"></i></a></h5> Daily life Softwares.
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-primary mt-5 w-100" id="thankButton" data-bs-dismiss="modal">Great, thanks!</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Slide section -->
     <div id="carouselExampleCaptions" class="carousel slide pt-5" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -186,19 +239,51 @@
         <!-- dynamic footer 👇🏻-->
     </div>
     <!-- Total Visit Count -->
-        <div class="text-center">
-            <!-- <h3>Total Visitors</h3>
+    <div class="text-center">
+        <!-- <h3>Total Visitors</h3>
             <hr> -->
-            <div class="d-flex gap-2 justify-content-center py-2 mb-lg-0 toolBadge visitcount">
-                <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
-                    <img class="me-1" src="https://camo.githubusercontent.com/29250e52b8862deb40658c56591244df08b332504f933e7897e4f3df5b507be7/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373696e646578266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174" style="max-width: 100%;" alt="visitcount logo"> Total Page Visit </span>
-            </div>
+        <div class="d-flex gap-2 justify-content-center py-2 mb-lg-0 toolBadge visitcount">
+            <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
+                <img class="me-1" src="https://camo.githubusercontent.com/29250e52b8862deb40658c56591244df08b332504f933e7897e4f3df5b507be7/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d626962656b3130353530626373696e646578266c6162656c3d50726f66696c65253230766965777326636f6c6f723d306537356236267374796c653d666c6174" style="max-width: 100%;" alt="visitcount logo"> Total Page Visit </span>
         </div>
+    </div>
     <!-- back to top -->
     <a anim="ripple" href="#" class="scrollup show-scroll" id="scroll-up"><button type="button" class="btn btn-outline-primary"><i class="fa fa-arrow-up" aria-hidden="true"></i></button></a>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/calendar.js"></script>
     <script>
+        // Update modal
+        document.addEventListener('DOMContentLoaded', function () {
+            const modalChoice = new bootstrap.Modal(document.getElementById('modalChoice'));
+            const thankButton = document.getElementById('thankButton');
+
+            const checkModalDisplay = () => {
+                const dontShowAgain = localStorage.getItem('BCSWelcome');
+                if (dontShowAgain) {
+                    const dontShowAgainTime = new Date(dontShowAgain);
+                    const now = new Date();
+                    const diffTime = Math.abs(now - dontShowAgainTime);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    if (diffDays < 7) {
+                        return false;
+                    }
+                }
+                return true;
+            };
+
+            if (checkModalDisplay()) {
+                setTimeout(() => {
+                    modalChoice.show();
+                }, 1000);
+            }
+
+            thankButton.addEventListener('click', () => {
+                const now = new Date();
+                localStorage.setItem('BCSWelcome', now.toISOString());
+
+                modalChoice.hide();
+            });
+        });
     </script>
 </body>
 
