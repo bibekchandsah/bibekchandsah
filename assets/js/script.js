@@ -774,15 +774,15 @@ AOS.init();
 
 
 // prevent debugging
-document.addEventListener('keydown', function (event) {
-    // Check if Ctrl + Shift + I are pressed
-    if (event.ctrlKey && event.shiftKey && event.key === 'I') {
-        // Prevent default action
-        event.preventDefault();
-        // Optionally, you can add a message or perform some other action here
-        console.log("Ctrl + Shift + I pressed. Default action prevented.");
-    }
-});
+// document.addEventListener('keydown', function (event) {
+//     // Check if Ctrl + Shift + I are pressed
+//     if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+//         // Prevent default action
+//         event.preventDefault();
+//         // Optionally, you can add a message or perform some other action here
+//         console.log("Ctrl + Shift + I pressed. Default action prevented.");
+//     }
+// });
 
 
 
@@ -790,6 +790,56 @@ document.addEventListener('keydown', function (event) {
 
 // prevent developer tool
 // Check if the browser's developer tools are open
+// (function() {
+//     let devtoolsOpen = false;
+//     const threshold = 160; // Adjust this value if needed
+
+//     const detectDevTools = () => {
+//         const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+//         const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+//         if (widthThreshold || heightThreshold) {
+//             if (!devtoolsOpen) {
+//                 devtoolsOpen = true;
+//                 const timestamp = new Date().toLocaleString();
+//                 console.log(`DevTools opened at: ${timestamp}`);
+//                 alert(`DevTools opened at: ${timestamp}`);
+//             }
+//         } else {
+//             devtoolsOpen = false;
+//         }
+//     };
+
+//     window.addEventListener('resize', detectDevTools);
+//     window.addEventListener('mousemove', detectDevTools);
+//     window.addEventListener('focus', detectDevTools);
+//     window.addEventListener('blur', detectDevTools);
+// })();
+
+
+
+
+// Disable right-click context menu
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+// Disable Ctrl+U
+// document.addEventListener('keydown', function(event) {
+//     if (event.ctrlKey && event.key === 'u') {
+//         event.preventDefault();
+//     }
+// });
+
+document.onkeydown = function(e) {
+    if (e.keyCode == 123 || // F12
+        (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || // Ctrl+Shift+I
+        (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) || // Ctrl+Shift+J
+        (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) { // Ctrl+U
+        e.preventDefault();
+        // window.location.href = 'https://your-redirect-page.com'; // Redirect to your specific page
+    }
+};
+
 
 
 
@@ -2770,6 +2820,24 @@ var swiper = new Swiper(".slide-content", {
     },
 })
 
+
+
+
+
+// for all page
+// filter the search
+let temp1 = document.querySelector("#noteTopicInput");
+temp1.onkeyup = function (e) {
+    const searchValue = e.target.value.toLowerCase();
+    $('.itemBox').each(function () {
+        const itemText = $(this).text().toLowerCase();
+        if (itemText.includes(searchValue)) {
+            $(this).show('1000');
+        } else {
+            $(this).hide('1000');
+        }
+    });
+};
 
 
 

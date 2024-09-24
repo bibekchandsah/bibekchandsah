@@ -76,11 +76,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <!-- modal Disclaimer -->
-    <div class="modal fade p-4 py-md-5 modal-sheet SoftwareModal" id="modalChoice" tabindex="-1" role="dialog" aria-labelledby="modalChoiceLabel" aria-hidden="true">
+    <!-- <div class="modal fade p-4 py-md-5 modal-sheet SoftwareModal" id="modalChoice" tabindex="-1" role="dialog" aria-labelledby="modalChoiceLabel" aria-hidden="true"> -->
+    <div class="modal fade p-4 py-md-5 modal-sheet SoftwareModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content rounded-3 shadow">
                 <div class="modal-body p-4">
-                    <h5 class="mb-0 text-center fw-bold">Software Disclaimer</h5>
+                    <h5 class="mb-0 text-center fw-bold" id="staticBackdropLabel">Software Disclaimer</h5>
                     <p class="mb-0 lead text-center">The Software is provided for your convenience, and you agree to use it at your own risk. While we have taken measures to ensure the reliability and functionality of the Software, we cannot guarantee its accuracy, completeness, or suitability for any purpose.</p>
                     <p class="lead">By using the software provided on this website, you agree to the following:</p>
                     <ul>
@@ -181,7 +182,7 @@
 
         // Software disclaimer modal
         document.addEventListener('DOMContentLoaded', function () {
-            const modalChoice = new bootstrap.Modal(document.getElementById('modalChoice'));
+            const modalChoice = new bootstrap.Modal(document.getElementById('staticBackdrop'));
             const flexCheckDefault = document.getElementById('flexCheckDefault');
             const agreeButton = document.getElementById('agreeButton');
 
