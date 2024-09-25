@@ -81,8 +81,8 @@ navigationBar.innerHTML += `
                     <div class="result-box">
                         <!-- search result dropdown box start -->
                         <ul class="SearchResult" id="ResultBox" style="display: none;">
-                            <li><a href="https://bibek10550.github.io/bibek/">Bibek</a></li>
-                            <li><a href="https://bibek10550.github.io/Music/">Music</a></li>
+                            <li><a href="https://bibekchandsah.github.io/bibek/">Bibek</a></li>
+                            <li><a href="https://bibekchandsah.github.io/Music/">Music</a></li>
                             <!-- <ul><li><a href="">y</a></li>
                 <li><a href="">Y</a></li>
                 <li><a href="">Y</a></li></ul> -->
@@ -464,16 +464,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Array of links to be added
     var links = [
-        // { href: 'https://bibek10550.github.io/bibek/', text: 'Bibek' },
-        // { href: 'https://bibek10550.github.io/Music/', text: 'Music' },
-        { href: 'https://bibek10550.github.io/bibeksha/qr%20code%20generator.html', text: 'Qr code generator' },
-        { href: 'https://bibek10550.github.io/linksaver/', text: 'Link Saver' },
-        { href: 'https://bibek10550.github.io/event-calendar/', text: 'Event Calendar' },
-        { href: 'https://bibek10550.github.io/calendar/', text: 'Calendar' },
-        { href: 'https://bibek10550.github.io/dailyQuote/', text: 'Daily Quotes' },
-        { href: 'https://github.com/bibek10550/pickupline', text: 'Pickup Line' },
-        { href: 'https://bibek10550.github.io/bibeksah48/youtube.html', text: 'Youtube videos' },
-        { href: 'https://bibek10550.github.io/bibeksah48/websites.html', text: 'Extensions' },
+        // { href: 'https://bibekchandsah.github.io/bibek/', text: 'Bibek' },
+        // { href: 'https://bibekchandsah.github.io/Music/', text: 'Music' },
+        { href: 'https://bibekchandsah.github.io/bibeksha/qr%20code%20generator.html', text: 'Qr code generator' },
+        { href: 'https://bibekchandsah.github.io/linksaver/', text: 'Link Saver' },
+        { href: 'https://bibekchandsah.github.io/event-calendar/', text: 'Event Calendar' },
+        { href: 'https://bibekchandsah.github.io/calendar/', text: 'Calendar' },
+        { href: 'https://bibekchandsah.github.io/dailyQuote/', text: 'Daily Quotes' },
+        { href: 'https://github.com/bibekchandsah/pickupline', text: 'Pickup Line' },
+        { href: 'https://bibekchandsah.github.io/bibeksah48/youtube.html', text: 'Youtube videos' },
+        { href: 'https://bibekchandsah.github.io/bibeksah48/websites.html', text: 'Extensions' },
         { href: 'https://vscode.dev/', text: 'VsCode Web' },
         { href: 'https://insiders.vscode.dev/', text: 'Insider VsCode Web' },
         { href: 'https://www.canva.com/', text: 'Canva' },
@@ -485,53 +485,53 @@ document.addEventListener('DOMContentLoaded', function () {
         { href: 'https://hacksnation.com/d/19956-github-repositories-every-developer-should-know', text: 'Github repositories for developer' },
         { href: 'https://hacksnation.com/d/21797-chat-gpt-40-miror-sites', text: 'Chat GPT mirror sites' },
         { href: 'https://chat.lmsys.org/', text: 'All AI for query' },
-        { href: 'https://bibek10550.github.io/kiitcse', text: 'KIIT CSE' },
-        { href: 'https://github.com/bibek10550/feedback', text: 'Feedback' },
-        { href: 'https://github.com/bibek10550/Homepage', text: 'Homepage' },
-        { href: 'https://github.com/bibek10550/CSE', text: 'CSE' },
-        { href: 'https://github.com/bibek10550/Music', text: 'Music' },
-        { href: 'https://github.com/bibek10550/bibek', text: 'bibek' },
-        { href: 'https://github.com/bibek10550/event-calendar', text: 'event-calendar' },
-        { href: 'https://github.com/bibek10550/calendar', text: 'calendar' },
-        { href: 'https://github.com/bibek10550/dailyQuote', text: 'dailyQuote' },
-        { href: 'https://github.com/bibek10550/youtube-resume-button', text: 'youtube-resume-button' },
-        { href: 'https://github.com/bibek10550/video-PIP-Instagram', text: 'video-PIP-Instagram' },
-        { href: 'https://github.com/bibek10550/showTime', text: 'showTime' },
-        { href: 'https://github.com/bibek10550/linksaver', text: 'linksaver' },
-        { href: 'https://github.com/bibek10550/pickupline', text: 'pickupline' },
-        { href: 'https://github.com/bibek10550/GoogleFormHelper', text: 'GoogleFormHelper' },
-        { href: 'https://github.com/bibek10550/documents', text: 'documents' },
-        { href: 'https://github.com/bibek10550/qr-code-reader-or-scanner', text: 'qr-code-reader-or-scanner' },
-        { href: 'https://github.com/bibek10550/bibeksah48', text: 'bibeksah48' },
-        { href: 'https://github.com/bibek10550/Water-droplet', text: 'Water-droplet' },
-        { href: 'https://github.com/bibek10550/google-search', text: 'google-search' },
-        { href: 'https://github.com/bibek10550/tutorial-point-all-pdf', text: 'tutorial-point-all-pdf' },
-        { href: 'https://github.com/bibek10550/3d-text-rotating', text: '3d-text-rotating' },
-        { href: 'https://github.com/bibek10550/Weird-Card-Design', text: 'Weird-Card-Design' },
-        { href: 'https://github.com/bibek10550/back-to-top', text: 'back-to-top' },
-        { href: 'https://github.com/bibek10550/3D-foldable-file', text: '3D-foldable-file' },
-        { href: 'https://github.com/bibek10550/custom-scroll-bar', text: 'custom-scroll-bar' },
-        { href: 'https://github.com/bibek10550/dropdown', text: 'dropdown' },
-        { href: 'https://github.com/bibek10550/light-and-dark-official', text: 'light-and-dark-official' },
-        { href: 'https://github.com/bibek10550/navigate-in-same-page', text: 'navigate-in-same-page' },
-        { href: 'https://github.com/bibek10550/parallax-mountain', text: 'parallax-mountain' },
-        { href: 'https://github.com/bibek10550/pop-up-after-load-page', text: 'pop-up-after-load-page' },
-        { href: 'https://github.com/bibek10550/pop-up-email', text: 'pop-up-email' },
-        { href: 'https://github.com/bibek10550/responsive-nav-bar', text: 'responsive-nav-bar' },
-        { href: 'https://github.com/bibek10550/responsive-signup-nav-bar', text: 'responsive-signup-nav-bar' },
-        { href: 'https://github.com/bibek10550/slide-show-with-nav-indicator', text: 'slide-show-with-nav-indicator' },
-        { href: 'https://github.com/bibek10550/sticky-nav-bar', text: 'sticky-nav-bar' },
-        { href: 'https://github.com/bibek10550/text-typing-loading-animation-effects', text: 'text-typing-loading-animation-effects' },
-        { href: 'https://github.com/bibek10550/card', text: 'card' },
-        { href: 'https://github.com/bibek10550/chat-bot', text: 'chat-bot' },
-        { href: 'https://github.com/bibek10550/3d-effect', text: '3d-effect' },
-        { href: 'https://github.com/bibek10550/double-nav-barr', text: 'double-nav-barr' },
-        { href: 'https://github.com/bibek10550/css-border', text: 'css-border' },
-        { href: 'https://github.com/bibek10550/double-nav-bar', text: 'double-nav-bar' },
-        { href: 'https://github.com/bibek10550/small-piece-of-paper-falling-down', text: 'small-piece-of-paper-falling-down' },
-        { href: 'https://github.com/bibek10550/working-google-search-engine', text: 'working-google-search-engine' },
-        { href: 'https://github.com/bibek10550/image-comparison', text: 'image-comparison' },
-        { href: 'https://github.com/bibek10550/Template', text: 'Template' },
+        { href: 'https://bibekchandsah.github.io/kiitcse', text: 'KIIT CSE' },
+        { href: 'https://github.com/bibekchandsah/feedback', text: 'Feedback' },
+        { href: 'https://github.com/bibekchandsah/Homepage', text: 'Homepage' },
+        { href: 'https://github.com/bibekchandsah/CSE', text: 'CSE' },
+        { href: 'https://github.com/bibekchandsah/Music', text: 'Music' },
+        { href: 'https://github.com/bibekchandsah/bibek', text: 'bibek' },
+        { href: 'https://github.com/bibekchandsah/event-calendar', text: 'event-calendar' },
+        { href: 'https://github.com/bibekchandsah/calendar', text: 'calendar' },
+        { href: 'https://github.com/bibekchandsah/dailyQuote', text: 'dailyQuote' },
+        { href: 'https://github.com/bibekchandsah/youtube-resume-button', text: 'youtube-resume-button' },
+        { href: 'https://github.com/bibekchandsah/video-PIP-Instagram', text: 'video-PIP-Instagram' },
+        { href: 'https://github.com/bibekchandsah/showTime', text: 'showTime' },
+        { href: 'https://github.com/bibekchandsah/linksaver', text: 'linksaver' },
+        { href: 'https://github.com/bibekchandsah/pickupline', text: 'pickupline' },
+        { href: 'https://github.com/bibekchandsah/GoogleFormHelper', text: 'GoogleFormHelper' },
+        { href: 'https://github.com/bibekchandsah/documents', text: 'documents' },
+        { href: 'https://github.com/bibekchandsah/qr-code-reader-or-scanner', text: 'qr-code-reader-or-scanner' },
+        { href: 'https://github.com/bibekchandsah/bibeksah48', text: 'bibeksah48' },
+        { href: 'https://github.com/bibekchandsah/Water-droplet', text: 'Water-droplet' },
+        { href: 'https://github.com/bibekchandsah/google-search', text: 'google-search' },
+        { href: 'https://github.com/bibekchandsah/tutorial-point-all-pdf', text: 'tutorial-point-all-pdf' },
+        { href: 'https://github.com/bibekchandsah/3d-text-rotating', text: '3d-text-rotating' },
+        { href: 'https://github.com/bibekchandsah/Weird-Card-Design', text: 'Weird-Card-Design' },
+        { href: 'https://github.com/bibekchandsah/back-to-top', text: 'back-to-top' },
+        { href: 'https://github.com/bibekchandsah/3D-foldable-file', text: '3D-foldable-file' },
+        { href: 'https://github.com/bibekchandsah/custom-scroll-bar', text: 'custom-scroll-bar' },
+        { href: 'https://github.com/bibekchandsah/dropdown', text: 'dropdown' },
+        { href: 'https://github.com/bibekchandsah/light-and-dark-official', text: 'light-and-dark-official' },
+        { href: 'https://github.com/bibekchandsah/navigate-in-same-page', text: 'navigate-in-same-page' },
+        { href: 'https://github.com/bibekchandsah/parallax-mountain', text: 'parallax-mountain' },
+        { href: 'https://github.com/bibekchandsah/pop-up-after-load-page', text: 'pop-up-after-load-page' },
+        { href: 'https://github.com/bibekchandsah/pop-up-email', text: 'pop-up-email' },
+        { href: 'https://github.com/bibekchandsah/responsive-nav-bar', text: 'responsive-nav-bar' },
+        { href: 'https://github.com/bibekchandsah/responsive-signup-nav-bar', text: 'responsive-signup-nav-bar' },
+        { href: 'https://github.com/bibekchandsah/slide-show-with-nav-indicator', text: 'slide-show-with-nav-indicator' },
+        { href: 'https://github.com/bibekchandsah/sticky-nav-bar', text: 'sticky-nav-bar' },
+        { href: 'https://github.com/bibekchandsah/text-typing-loading-animation-effects', text: 'text-typing-loading-animation-effects' },
+        { href: 'https://github.com/bibekchandsah/card', text: 'card' },
+        { href: 'https://github.com/bibekchandsah/chat-bot', text: 'chat-bot' },
+        { href: 'https://github.com/bibekchandsah/3d-effect', text: '3d-effect' },
+        { href: 'https://github.com/bibekchandsah/double-nav-barr', text: 'double-nav-barr' },
+        { href: 'https://github.com/bibekchandsah/css-border', text: 'css-border' },
+        { href: 'https://github.com/bibekchandsah/double-nav-bar', text: 'double-nav-bar' },
+        { href: 'https://github.com/bibekchandsah/small-piece-of-paper-falling-down', text: 'small-piece-of-paper-falling-down' },
+        { href: 'https://github.com/bibekchandsah/working-google-search-engine', text: 'working-google-search-engine' },
+        { href: 'https://github.com/bibekchandsah/image-comparison', text: 'image-comparison' },
+        { href: 'https://github.com/bibekchandsah/Template', text: 'Template' },
         // { href: 'https', text: 'Link' },
         // Add more links as needed
     ];
@@ -573,9 +573,9 @@ navigationBar.innerHTML += `
             <div class="col-6 col-md-2 mb-3">
                 <h5>Most Popular</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/kiitcse" class="nav-link p-0 text-body-secondary">KIIT CSE</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/Homepage" class="nav-link p-0 text-body-secondary">HomePage</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/event-calendar" class="nav-link p-0 text-body-secondary">Event Calendar</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/kiitcse" class="nav-link p-0 text-body-secondary">KIIT CSE</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/Homepage" class="nav-link p-0 text-body-secondary">HomePage</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/event-calendar" class="nav-link p-0 text-body-secondary">Event Calendar</a></li>
                     <li class="nav-item mb-2"><a href="html&css.html" class="nav-link p-0 text-body-secondary">HTML & CSS</a></li>
                     <li class="nav-item mb-2"><a href="javascript&css.html" class="nav-link p-0 text-body-secondary">JavaScript</a></li>
                     <li class="nav-item mb-2"><a href="telegram.html" class="nav-link p-0 text-body-secondary">Telegram Channels</a></li>
@@ -584,12 +584,12 @@ navigationBar.innerHTML += `
             <div class="col-6 col-md-2 mb-3">
                 <h5>Recent</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/kiitcse" class="nav-link p-0 text-body-secondary">KIIT CSE</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/feedback" class="nav-link p-0 text-body-secondary">Feedback</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/Homepage" class="nav-link p-0 text-body-secondary">Homepage</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/Music" class="nav-link p-0 text-body-secondary">Music</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/event-calendar" class="nav-link p-0 text-body-secondary">Event Calendar</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/dailyQuote" class="nav-link p-0 text-body-secondary">Daily Quotes</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/kiitcse" class="nav-link p-0 text-body-secondary">KIIT CSE</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/feedback" class="nav-link p-0 text-body-secondary">Feedback</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/Homepage" class="nav-link p-0 text-body-secondary">Homepage</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/Music" class="nav-link p-0 text-body-secondary">Music</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/event-calendar" class="nav-link p-0 text-body-secondary">Event Calendar</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/dailyQuote" class="nav-link p-0 text-body-secondary">Daily Quotes</a></li>
                     </ul>
                     </div>
                     <div class="col-6 col-md-2 mb-3">
@@ -598,7 +598,7 @@ navigationBar.innerHTML += `
                     <li class="nav-item mb-2"><a href="developer.html" class="nav-link p-0 text-body-secondary developer">About Us</a></li>
                     <li class="nav-item mb-2"><a href="feedback.html" class="nav-link p-0 text-body-secondary feedback">Feedback</a></li>
                     <li class="nav-item mb-2"><a href="mailto:bibeksha48@gmail.com" class="nav-link p-0 text-body-secondary">Gmail</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/bibek10550/" class="nav-link p-0 text-body-secondary">Github</a></li>
+                    <li class="nav-item mb-2"><a href="https://github.com/bibekchandsah/" class="nav-link p-0 text-body-secondary">Github</a></li>
                     <li class="nav-item mb-2"><a href="https://greasyfork.org/en/users/1256995-bibek-sha" class="nav-link p-0 text-body-secondary">Greasy Fork</a></li>
                     <li class="nav-item mb-2"><a href="term&conditions.html" class="nav-link p-0 text-body-secondary term&condition">Term & Conditions</a></li>
                 </ul>
@@ -618,15 +618,15 @@ navigationBar.innerHTML += `
             </div>
             <ul class="list-unstyled d-flex footerBadge">
                 <li class="ms-3"><a href="https://www.facebook.com/bibek.sha.1432/" target="_blank" title="facebook"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
-                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibek10550.github.io/kiitcse/assets/image/facebook.png" alt="facebook logo">Facebook </span></a> </li>
+                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibekchandsah.github.io/kiitcse/assets/image/facebook.png" alt="facebook logo">Facebook </span></a> </li>
                 <li class="ms-3"><a href="https://www.instagram.com/bibeksha1432/" target="_blank" title="instagram"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
-                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibek10550.github.io/kiitcse/assets/image/instagram.png" alt="instagram logo">Instagram </span></a></li>
+                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibekchandsah.github.io/kiitcse/assets/image/instagram.png" alt="instagram logo">Instagram </span></a></li>
                 <li class="ms-3"><a href="mailto:bibeksha48@gmail.com" title="Send Message"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
-                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibek10550.github.io/kiitcse/assets/image/gmail.png" alt="gmail logo">Gmail </span></a> </li>
+                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibekchandsah.github.io/kiitcse/assets/image/gmail.png" alt="gmail logo">Gmail </span></a> </li>
                 <li class="ms-3"><a href="#whatsappLink" id="whatsappLink"> <span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
-                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibek10550.github.io/kiitcse/assets/image/share.png" alt="">Share </span></a></li>
+                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibekchandsah.github.io/kiitcse/assets/image/share.png" alt="">Share </span></a></li>
                 <li class="ms-3"><a href="Feedback.html" title="feedback"><span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill mb-3">
-                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibek10550.github.io/kiitcse/assets/image/feedback.jpeg" alt="feedback logo">Feedback </span></a></li>
+                            <img class="rounded-circle me-1" width="24" height="24" src="https://bibekchandsah.github.io/kiitcse/assets/image/feedback.jpeg" alt="feedback logo">Feedback </span></a></li>
             </ul>
         </div>
     </footer>
@@ -1047,24 +1047,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
 // most popular container
 var cardDataMostPopular = [
     {
-        img: "https://bibek10550.github.io/kiitcse/assets/image/KIIT_CSE_blue_name_transparent.png",
+        img: "https://bibekchandsah.github.io/kiitcse/assets/image/KIIT_CSE_blue_name_transparent.png",
         altText: "KIIT CSE",
         name: "KIIT CSE",
-        link: "https://github.com/bibek10550/kiitcse",
+        link: "https://github.com/bibekchandsah/kiitcse",
         description: "This resource hub simplifies your educational journey in Computer Science and Engineering (CSE). It offers: Previous Year Questions (PYQs), Concise Notes, Video Lectures."
     },
     {
-        img: "https://bibek10550.github.io/Homepage/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/Homepage/favicon_io/apple-touch-icon.png",
         altText: "Homepage",
         name: "Homepage",
-        link: "https://github.com/bibek10550/Homepage",
+        link: "https://github.com/bibekchandsah/Homepage",
         description: "This homepage is designed to suit your preferences and needs. It offers many features and useful items that you use every day. You can easily customize it to make it your own."
     },
     {
-        img: "https://bibek10550.github.io/event-calendar/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/event-calendar/favicon_io/apple-touch-icon.png",
         altText: "event-calendar",
         name: "Event Calendar",
-        link: "https://github.com/bibek10550/event-calendar/",
+        link: "https://github.com/bibekchandsah/event-calendar/",
         description: "Effortlessly manage your schedule and organize your time effectively with this intuitive and feature-rich calendar application. This calendar is able to store your events and mark the days dynamically."
     },
     // {
@@ -1118,24 +1118,24 @@ cardDataMostPopular.forEach(function (cardInfo) {
 // recent projects Container Data 
 var cardData = [
     {
-        img: "https://bibek10550.github.io/kiitcse/assets/image/KIIT_CSE_blue_name_transparent.png",
+        img: "https://bibekchandsah.github.io/kiitcse/assets/image/KIIT_CSE_blue_name_transparent.png",
         altText: "KIIT CSE",
         name: "KIIT CSE",
-        link: "https://github.com/bibek10550/kiitcse",
+        link: "https://github.com/bibekchandsah/kiitcse",
         description: "This resource hub simplifies your educational journey in Computer Science and Engineering (CSE). It offers: Previous Year Questions (PYQs), Concise Notes, Video Lectures."
     },
     {
-        img: "https://bibek10550.github.io/Homepage/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/Homepage/favicon_io/apple-touch-icon.png",
         altText: "Homepage",
         name: "Homepage",
-        link: "https://github.com/bibek10550/Homepage",
+        link: "https://github.com/bibekchandsah/Homepage",
         description: "This homepage is designed to suit your preferences and needs. It offers many features and useful items that you use every day. You can easily customize it to make it your own."
     },
     {
-        img: "https://bibek10550.github.io/feedback/favicon/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/feedback/favicon/apple-touch-icon.png",
         altText: "feedback form",
         name: "Feedback",
-        link: "https://github.com/bibek10550/feedback",
+        link: "https://github.com/bibekchandsah/feedback",
         description: "A platform for collecting feedback and suggestions to improve user experience and satisfaction. "
     },
 
@@ -1193,339 +1193,339 @@ cardData.forEach(function (cardInfo) {
 // projects Data
 var cardDataProject1 = [
     {
-        img: "https://bibek10550.github.io/kiitcse/assets/image/KIIT_CSE_blue_name_transparent.png",
+        img: "https://bibekchandsah.github.io/kiitcse/assets/image/KIIT_CSE_blue_name_transparent.png",
         altText: "KIIT CSE",
         name: "KIIT CSE",
-        link: "https://github.com/bibek10550/kiitcse",
+        link: "https://github.com/bibekchandsah/kiitcse",
         description: "This resource hub simplifies your educational journey in Computer Science and Engineering (CSE). It offers: Previous Year Questions (PYQs), Concise Notes, Video Lectures."
     },
     {
-        "img": "https://bibek10550.github.io/feedback/favicon/apple-touch-icon.png",
+        "img": "https://bibekchandsah.github.io/feedback/favicon/apple-touch-icon.png",
         "altText": "Feedback",
         "name": "Feedback",
-        "link": "https://github.com/bibek10550/feedback",
+        "link": "https://github.com/bibekchandsah/feedback",
         "description": "A platform for collecting feedback and suggestions to improve user experience and satisfaction."
     },
     {
-        img: "https://bibek10550.github.io/Homepage/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/Homepage/favicon_io/apple-touch-icon.png",
         altText: "Homepage",
         name: "Homepage",
-        link: "https://github.com/bibek10550/Homepage",
+        link: "https://github.com/bibekchandsah/Homepage",
         description: "This homepage is designed to suit your preferences and needs. It offers many features and useful items that you use every day. You can easily customize it to make it your own."
     },
     {
-        img: "https://bibek10550.github.io/CSE/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/CSE/favicon_io/apple-touch-icon.png",
         altText: "CSE",
         name: "CSE",
-        link: "https://github.com/bibek10550/CSE",
+        link: "https://github.com/bibekchandsah/CSE",
         description: "Explore the world of Computer Science and Engineering (CSE) with resources including study materials, project ideas, and educational content."
     },
     {
-        img: "https://bibek10550.github.io/Music/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/Music/favicon_io/apple-touch-icon.png",
         altText: "Music",
         name: "Music",
-        link: "https://github.com/bibek10550/Music",
+        link: "https://github.com/bibekchandsah/Music",
         description: "Discover and enjoy a collection of musical compositions, genres, and playlists tailored to suit every taste and mood."
     },
     {
-        img: "https://bibek10550.github.io/bibek/assets/favicon/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/bibek/assets/favicon/apple-touch-icon.png",
         altText: "Bibek",
         name: "Bibek",
-        link: "https://github.com/bibek10550/bibek",
+        link: "https://github.com/bibekchandsah/bibek",
         description: "Explore the personal portfolio and projects of Bibek, showcasing skills, experiences, and achievements."
     },
     {
-        img: "https://bibek10550.github.io/event-calendar/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/event-calendar/favicon_io/apple-touch-icon.png",
         altText: "Event Calendar",
         name: "Event Calendar",
-        link: "https://github.com/bibek10550/event-calendar",
+        link: "https://github.com/bibekchandsah/event-calendar",
         description: "Keep track of your events and appointments with this convenient and user-friendly event calendar application."
     },
     {
-        img: "https://bibek10550.github.io/event-calendar/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/event-calendar/favicon_io/apple-touch-icon.png",
         altText: "Calendar",
         name: "Calendar",
-        link: "https://github.com/bibek10550/calendar",
+        link: "https://github.com/bibekchandsah/calendar",
         description: "Effortlessly manage your schedule and organize your time effectively with this intuitive and feature-rich calendar application."
     },
     {
-        img: "https://bibek10550.github.io/dailyQuote/favicon_io/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/dailyQuote/favicon_io/apple-touch-icon.png",
         altText: "Daily Quote",
         name: "Daily Quote",
-        link: "https://github.com/bibek10550/dailyQuote",
+        link: "https://github.com/bibekchandsah/dailyQuote",
         description: "Receive daily doses of inspiration and motivation with this app that delivers uplifting quotes straight to your device."
     },
     {
         img: "https://placehold.co/1920x1080.png?text=youtube+resume+button",
         altText: "YouTube Resume Button",
         name: "YouTube Resume Button",
-        link: "https://github.com/bibek10550/youtube-resume-button",
+        link: "https://github.com/bibekchandsah/youtube-resume-button",
         description: "Enhance your YouTube experience with a convenient resume button that allows you to block the advertisement and continue playing the video where you left off in videos."
     },
     {
         img: "https://placehold.co/1920x1080.png?text=video-PIP-Instagram",
         altText: "Video PIP Instagram",
         name: "Video PIP Instagram",
-        link: "https://github.com/bibek10550/video-PIP-Instagram",
+        link: "https://github.com/bibekchandsah/video-PIP-Instagram",
         description: "Enjoy seamless multitasking with video-PIP-Instagram, enabling picture-in-picture mode for Instagram videos call while browsing through the page."
     },
     {
         img: "assets/images/projects/showTime.png",
         altText: "ShowTime",
         name: "ShowTime",
-        link: "https://github.com/bibek10550/showTime",
+        link: "https://github.com/bibekchandsah/showTime",
         description: "Experience sleek and modern design with showTime, Shows the current time so that you don't need to look clock manually"
     },
     {
-        img: "https://raw.githubusercontent.com/bibek10550/linksaver/main/android-chrome-512x512.png",
+        img: "https://raw.githubusercontent.com/bibekchandsah/linksaver/main/android-chrome-512x512.png",
         altText: "LinkSaver",
         name: "LinkSaver",
-        link: "https://github.com/bibek10550/linksaver",
+        link: "https://github.com/bibekchandsah/linksaver",
         description: "Organize and save your favorite links with ease using LinkSaver, a convenient tool for bookmarking and managing URLs."
     },
     {
-        img: "https://raw.githubusercontent.com/bibek10550/pickupline/main/icon.png",
+        img: "https://raw.githubusercontent.com/bibekchandsah/pickupline/main/icon.png",
         altText: "Pickupline",
         name: "Pickupline",
-        link: "https://github.com/bibek10550/pickupline",
+        link: "https://github.com/bibekchandsah/pickupline",
         description: "Spruce up your conversation skills with Pickupline, a collection of witty and charming pick-up lines for various social situations."
     },
     {
         img: "assets/images/projects/GoogleFormHelper.png",
         altText: "Google Form Helper",
         name: "Google Form Helper",
-        link: "https://github.com/bibek10550/GoogleFormHelper",
+        link: "https://github.com/bibekchandsah/GoogleFormHelper",
         description: "It is able to provide the answer automatically and also selects the best answer automatically."
     },
     {
-        img: "https://bibek10550.github.io/documents/fav-icon/apple-touch-icon.png",
+        img: "https://bibekchandsah.github.io/documents/fav-icon/apple-touch-icon.png",
         altText: "Documents",
         name: "Documents",
-        link: "https://github.com/bibek10550/documents",
+        link: "https://github.com/bibekchandsah/documents",
         description: "Access and manage your documents more efficiently with Documents, a platform for organizing and storing files online."
     },
     {
         img: "assets/images/projects/qr-code-reader-or-scanner.png",
         altText: "QR Code Reader or Scanner",
         name: "QR Code Reader or Scanner",
-        link: "https://github.com/bibek10550/qr-code-reader-or-scanner",
+        link: "https://github.com/bibekchandsah/qr-code-reader-or-scanner",
         description: "Easily scan and decode QR codes with QR Code Reader or Scanner, providing quick access to information encoded in QR codes."
     },
     {
         img: "assets/images/projects/bibeksah48.png",
         altText: "Bibeksah48",
         name: "Bibeksah48",
-        link: "https://github.com/bibek10550/bibeksah48",
+        link: "https://github.com/bibekchandsah/bibeksah48",
         description: "Explore the personal portfolio and projects of Bibeksah48, showcasing skills, experiences, and achievements."
     },
     {
         img: "assets/images/projects/Water-droplet.png",
         altText: "Water-droplet",
         name: "Water-droplet",
-        link: "https://github.com/bibek10550/Water-droplet",
+        link: "https://github.com/bibekchandsah/Water-droplet",
         description: "Experience the soothing and mesmerizing effect of water droplets with this elegant and calming animation."
     },
     {
         img: "assets/images/projects/google-search.png",
         altText: "Google Search",
         name: "Google Search",
-        link: "https://github.com/bibek10550/google-search",
+        link: "https://github.com/bibekchandsah/google-search",
         description: "Simplify your web browsing experience with Google Search, offering fast and accurate search results from the world's largest search engine."
     },
     {
         img: "assets/images/projects/tutorial-point-all-pdf.png",
         altText: "Tutorial Point All PDF",
         name: "Tutorial Point All PDF",
-        link: "https://github.com/bibek10550/tutorial-point-all-pdf",
+        link: "https://github.com/bibekchandsah/tutorial-point-all-pdf",
         description: "Access a comprehensive collection of educational resources and tutorials in PDF format from Tutorial Point All PDF."
     },
     {
         img: "assets/images/projects/3d-text-rotating.png",
         altText: "3D Text Rotating",
         name: "3D Text Rotating",
-        link: "https://github.com/bibek10550/3d-text-rotating",
+        link: "https://github.com/bibekchandsah/3d-text-rotating",
         description: "Add depth and visual interest to your designs with 3D Text Rotating, a tool for creating captivating three-dimensional text effects."
     },
     {
         img: "assets/images/projects/Weird-Card-Design.png",
         altText: "Weird Card Design",
         name: "Weird Card Design",
-        link: "https://github.com/bibek10550/Weird-Card-Design",
+        link: "https://github.com/bibekchandsah/Weird-Card-Design",
         description: "Explore unconventional and imaginative card designs with Weird Card Design, offering unique and creative templates for various purposes."
     },
     {
         img: "assets/images/projects/back-to-top.png",
         altText: "Back to Top",
         name: "Back to Top",
-        link: "https://github.com/bibek10550/back-to-top",
+        link: "https://github.com/bibekchandsah/back-to-top",
         description: "Enhance user experience and navigation on your website with Back to Top, a convenient feature that allows users to quickly return to the top of the page."
     },
     {
         img: "assets/images/projects/3D-foldable-file.png",
         altText: "3D Foldable File",
         name: "3D Foldable File",
-        link: "https://github.com/bibek10550/3D-foldable-file",
+        link: "https://github.com/bibekchandsah/3D-foldable-file",
         description: "Explore a visually stunning and interactive 3D foldable file viewer, providing a unique and engaging way to interact with digital documents."
     },
     {
         img: "assets/images/projects/custom-scroll-bar.png",
         altText: "Custom Scroll Bar",
         name: "Custom Scroll Bar",
-        link: "https://github.com/bibek10550/custom-scroll-bar",
+        link: "https://github.com/bibekchandsah/custom-scroll-bar",
         description: "Enhance the appearance and functionality of your website with a custom scroll bar, allowing for greater control and customization of scrolling behavior."
     },
     {
         img: "assets/images/projects/dropdown.png",
         altText: "Dropdown",
         name: "Dropdown",
-        link: "https://github.com/bibek10550/dropdown",
+        link: "https://github.com/bibekchandsah/dropdown",
         description: "Implement sleek and user-friendly dropdown menus on your website with Dropdown, offering smooth transitions and intuitive navigation."
     },
     {
         img: "assets/images/projects/light-and-dark-official.png",
         altText: "Light and Dark Official",
         name: "Light and Dark Official",
-        link: "https://github.com/bibek10550/light-and-dark-official",
+        link: "https://github.com/bibekchandsah/light-and-dark-official",
         description: "Provide users with the flexibility to switch between light and dark modes on your website with Light and Dark Official, enhancing readability and reducing eye strain."
     },
     {
         img: "assets/images/projects/navigate-in-same-page.png",
         altText: "Navigate in Same Page",
         name: "Navigate in Same Page",
-        link: "https://github.com/bibek10550/navigate-in-same-page",
+        link: "https://github.com/bibekchandsah/navigate-in-same-page",
         description: "Improve user experience and streamline navigation on your website with Navigate in Same Page, allowing users to smoothly scroll to different sections of the same page."
     },
     {
         img: "assets/images/projects/parallax-mountain.png",
         altText: "Parallax Mountain",
         name: "Parallax Mountain",
-        link: "https://github.com/bibek10550/parallax-mountain",
+        link: "https://github.com/bibekchandsah/parallax-mountain",
         description: "Create visually stunning and immersive web experiences with Parallax Mountain, featuring captivating parallax scrolling effects that bring your content to life."
     },
     {
         img: "assets/images/projects/pop-up-after-load-page.png",
         altText: "Pop-up After Load Page",
         name: "Pop-up After Load Page",
-        link: "https://github.com/bibek10550/pop-up-after-load-page",
+        link: "https://github.com/bibekchandsah/pop-up-after-load-page",
         description: "Capture user attention and convey important messages with Pop-up After Load Page, a customizable pop-up window that appears after the page has finished loading."
     },
     {
         img: "assets/images/projects/pop-up-email.png",
         altText: "Pop-up Email",
         name: "Pop-up Email",
-        link: "https://github.com/bibek10550/pop-up-email",
+        link: "https://github.com/bibekchandsah/pop-up-email",
         description: "Facilitate user engagement and lead generation with Pop-up Email, a user-friendly email subscription pop-up that encourages visitors to subscribe to your mailing list."
     },
     {
         img: "assets/images/projects/responsive-nav-bar.png",
         altText: "Responsive Nav Bar",
         name: "Responsive Nav Bar",
-        link: "https://github.com/bibek10550/responsive-nav-bar",
+        link: "https://github.com/bibekchandsah/responsive-nav-bar",
         description: "Ensure seamless navigation on all devices with Responsive Nav Bar, an adaptive navigation menu that adjusts its layout and functionality based on screen size."
     },
     {
         img: "assets/images/projects/responsive-signup-nav-bar.png",
         altText: "Responsive Signup Nav Bar",
         name: "Responsive Signup Nav Bar",
-        link: "https://github.com/bibek10550/responsive-signup-nav-bar",
+        link: "https://github.com/bibekchandsah/responsive-signup-nav-bar",
         description: "Optimize user experience and conversion rates with Responsive Signup Nav Bar, a mobile-friendly navigation menu designed to enhance sign-up and registration processes."
     },
     {
         img: "assets/images/projects/slide-show-with-nav-indicator.png",
         altText: "Slide Show with Nav Indicator",
         name: "Slide Show with Nav Indicator",
-        link: "https://github.com/bibek10550/slide-show-with-nav-indicator",
+        link: "https://github.com/bibekchandsah/slide-show-with-nav-indicator",
         description: "Create engaging and interactive slideshow presentations with Slide Show with Nav Indicator, featuring intuitive navigation indicators for easy slide navigation."
     },
     {
         img: "assets/images/projects/sticky-nav-bar.png",
         altText: "Sticky Nav Bar",
         name: "Sticky Nav Bar",
-        link: "https://github.com/bibek10550/sticky-nav-bar",
+        link: "https://github.com/bibekchandsah/sticky-nav-bar",
         description: "Improve website navigation and user experience with Sticky Nav Bar, a fixed navigation menu that remains visible and accessible as users scroll through the page."
     },
     {
         img: "assets/images/projects/text-typing-loading-animation-effects.png",
         altText: "Text Typing Loading Animation Effects",
         name: "Text Typing Loading Animation Effects",
-        link: "https://github.com/bibek10550/text-typing-loading-animation-effects",
+        link: "https://github.com/bibekchandsah/text-typing-loading-animation-effects",
         description: "Enhance visual appeal and user engagement with Text Typing Loading Animation Effects, a collection of dynamic and attention-grabbing text animation effects for loading screens."
     },
     {
         img: "assets/images/projects/card.png",
         altText: "Card",
         name: "Card",
-        link: "https://github.com/bibek10550/card",
+        link: "https://github.com/bibekchandsah/card",
         description: "Create stylish and customizable card components with Card, perfect for showcasing content, products, and information in an attractive and organized manner."
     },
     {
         img: "assets/images/projects/chat-bot.png",
         altText: "Chat Bot",
         name: "Chat Bot",
-        link: "https://github.com/bibek10550/chat-bot",
+        link: "https://github.com/bibekchandsah/chat-bot",
         description: "Enhance user engagement and customer support with Chat Bot, an AI-powered chatbot that provides instant responses and assistance to users on your website."
     },
     {
         img: "assets/images/projects/3d-effect.png",
         altText: "3D Effect",
         name: "3D Effect",
-        link: "https://github.com/bibek10550/3d-effect",
+        link: "https://github.com/bibekchandsah/3d-effect",
         description: "Add depth and visual interest to your website with 3D Effect, a collection of stunning three-dimensional effects and animations for creating immersive web experiences."
     },
     {
         img: "assets/images/projects/double-nav-barr.png",
         altText: "Double Nav Barr",
         name: "Double Nav Barr",
-        link: "https://github.com/bibek10550/double-nav-barr",
+        link: "https://github.com/bibekchandsah/double-nav-barr",
         description: "Enhance website navigation and organization with Double Nav Barr, featuring two navigation bars for improved user experience and accessibility."
     },
     {
         img: "assets/images/projects/css-border.png",
         altText: "CSS Border",
         name: "CSS Border",
-        link: "https://github.com/bibek10550/css-border",
+        link: "https://github.com/bibekchandsah/css-border",
         description: "Customize and enhance the appearance of your website elements with CSS Border, offering a variety of border styles and effects to choose from."
     },
     {
         img: "assets/images/projects/double-nav-bar.png",
         altText: "Double Nav Bar",
         name: "Double Nav Bar",
-        link: "https://github.com/bibek10550/double-nav-bar",
+        link: "https://github.com/bibekchandsah/double-nav-bar",
         description: "Improve website navigation and usability with Double Nav Bar, featuring a dual navigation menu layout for easier access to content and sections."
     },
     {
         img: "assets/images/projects/small-piece-of-paper-falling-down.png",
         altText: "Small Piece of Paper Falling Down",
         name: "Small Piece of Paper Falling Down",
-        link: "https://github.com/bibek10550/small-piece-of-paper-falling-down",
+        link: "https://github.com/bibekchandsah/small-piece-of-paper-falling-down",
         description: "Add visual interest and interactivity to your website with Small Piece of Paper Falling Down, a charming animation effect that simulates falling paper elements."
     },
     {
         img: "assets/images/projects/working-google-search-engine.png",
         altText: "Working Google Search Engine",
         name: "Working Google Search Engine",
-        link: "https://github.com/bibek10550/working-google-search-engine",
+        link: "https://github.com/bibekchandsah/working-google-search-engine",
         description: "Create your own search engine with Working Google Search Engine, a customizable and functional search tool powered by Google's search API."
     },
     {
         img: "assets/images/projects/image-comparison.png",
         altText: "Image Comparison",
         name: "Image Comparison",
-        link: "https://github.com/bibek10550/image-comparison",
+        link: "https://github.com/bibekchandsah/image-comparison",
         description: "Highlight differences and visualize changes between images with Image Comparison, a tool for comparing two images side by side with a draggable slider."
     },
     {
         img: "assets/images/projects/Template.png",
         altText: "Template",
         name: "Template",
-        link: "https://github.com/bibek10550/Template",
+        link: "https://github.com/bibekchandsah/Template",
         description: "Kickstart your web development projects with Template, a versatile and customizable website template designed to meet various design and layout needs."
     },
     // {
     //     img: "https",
     //     altText: "Homepage",
     //     name: "Homepage",
-    //     link: "https://bibek10550.github.io/",
+    //     link: "https://bibekchandsah.github.io/",
     //     description: "This"
     // },
     // Add more card data objects here if needed
@@ -2709,25 +2709,25 @@ generateSoftwareElements();
 // testimonial Data for multiple cards
 var cardDataTestimonial = [
     {
-        img: "https://bibek10550.github.io/kiitcse/assets/image/developer.jpg",
+        img: "https://bibekchandsah.github.io/kiitcse/assets/image/developer.jpg",
         altText: "Bibek Chand Sah",
         name: "Bibek Chand Sah",
         description: "If this page help you in anyway then please consider providing us the feedback in feedback page. It will help us a lot to improve the content of the page."
     },
     {
-        img: "https://bibek10550.github.io/kiitcse/assets/image/developer.jpg",
+        img: "https://bibekchandsah.github.io/kiitcse/assets/image/developer.jpg",
         altText: "Bibek Chand Sah",
         name: "Bibek Chand Sah",
         description: "If this page help you in anyway then please consider providing us the feedback in feedback page. It will help us a lot to improve the content of the page."
     },
     {
-        img: "https://bibek10550.github.io/kiitcse/assets/image/developer.jpg",
+        img: "https://bibekchandsah.github.io/kiitcse/assets/image/developer.jpg",
         altText: "Bibek Chand Sah",
         name: "Bibek Chand Sah",
         description: "If this page help you in anyway then please consider providing us the feedback in feedback page. It will help us a lot to improve the content of the page."
     },
     {
-        img: "https://bibek10550.github.io/kiitcse/assets/image/developer.jpg",
+        img: "https://bibekchandsah.github.io/kiitcse/assets/image/developer.jpg",
         altText: "Bibek Chand Sah",
         name: "Bibek Chand Sah",
         description: "If this page help you in anyway then please consider providing us the feedback in feedback page. It will help us a lot to improve the content of the page."

@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const widgetContainer = document.getElementById("widget-container");
     const themeContainers = {
-        calendar: { container: document.getElementById("theme-buttons-container-calendar"), url: "https://bibek10550.github.io/event-calendar/", mobileWidth: 380, desktopWidth: 453, mobileHeight: 630, desktopHeight: 630 },
-        commenting: { container: document.getElementById("theme-buttons-container-commenting"), url: "https://bibek10550.github.io/dailyQuote/", mobileWidth: 388, desktopWidth: 640, mobileHeight: 583, desktopHeight: 430 },
-        linksaver: { container: document.getElementById("theme-buttons-container-linksaver"), url: "https://bibek10550.github.io/linksaver/", mobileWidth: 330, desktopWidth: 330, mobileHeight: 456, desktopHeight: 456 },
+        calendar: { container: document.getElementById("theme-buttons-container-calendar"), url: "https://bibekchandsah.github.io/event-calendar/", mobileWidth: 380, desktopWidth: 453, mobileHeight: 630, desktopHeight: 630 },
+        commenting: { container: document.getElementById("theme-buttons-container-commenting"), url: "https://bibekchandsah.github.io/dailyQuote/", mobileWidth: 388, desktopWidth: 640, mobileHeight: 583, desktopHeight: 430 },
+        linksaver: { container: document.getElementById("theme-buttons-container-linksaver"), url: "https://bibekchandsah.github.io/linksaver/", mobileWidth: 330, desktopWidth: 330, mobileHeight: 456, desktopHeight: 456 },
     };
     // Function to close all theme containers
     function closeAllThemeContainers() {

@@ -2,11 +2,11 @@
 <h3 align="center">Your go-to destination for all things related to web development! I am a dedicated and passionate about sharing my knowledge and expertise with the world. I am excited to be a part of your coding journey! Now, let's explore BCS together!</h3>
 
 <!-- Profile View Count -->
-<p align="right"> <img src="https://komarev.com/ghpvc/?username=bibek10550&label=Profile%20views&color=0e75b6&style=flat" alt="Bibek Chand Sah (BCS0" /> </p>
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=bibekchandsah&label=Profile%20views&color=0e75b6&style=flat" alt="Bibek Chand Sah (BCS0" /> </p>
 
 ## Website
-<h1>👉🏻 <a href="https://bibek10550.github.io/bibek10550/">Bibek Chand Sah (BCS)</a></h1>
-<h1>👉🏻 <a href="https://github.com/bibek10550/bibek10550/blob/main/Bibek%20Chand%20Sah%20Resume.pdf">Resume</a></h1>
+<h1>👉🏻 <a href="https://bibekchandsah.github.io/bibekchandsah/">Bibek Chand Sah (BCS)</a></h1>
+<h1>👉🏻 <a href="https://github.com/bibekchandsah/bibekchandsah/blob/main/Bibek%20Chand%20Sah%20Resume.pdf">Resume</a></h1>
 
 ## Features
 - Light/dark mode toggle
@@ -26,11 +26,11 @@ If you have any feedback, please reach out to us at <a href="feedback.html">Feed
 
 - 📫 How to reach me **bibeksha48@gmail.com**
 
-- 📄 Know about my experiences [bibek](https://bibek10550.github.io/bibek)
+- 📄 Know about my experiences [bibek](https://bibekchandsah.github.io/bibek)
 
 ## Authors
 
-- [@bibek](https://www.github.com/bibek10550)
+- [@bibek](https://www.github.com/bibekchandsah)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -44,7 +44,7 @@ If you have any feedback, please reach out to us at <a href="feedback.html">Feed
 
 ## Screenshots
 <!-- ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here) -->
-<img src="assets/images/projects/bibek10550.png" alt="BCS"/>
+<img src="assets/images/projects/bibekchandsah.png" alt="BCS"/>
 
 
 ## Logo
@@ -53,4 +53,4 @@ If you have any feedback, please reach out to us at <a href="feedback.html">Feed
 ![Logo](assets/images/BCS.png)
 
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=bibek10550&" alt="bibek10550" /></p>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=bibekchandsah&" alt="bibekchandsah" /></p>
