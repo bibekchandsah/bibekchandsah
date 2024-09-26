@@ -6,7 +6,8 @@
 
 ## Website
 <h1>👉🏻 <a href="https://bibekchandsah.github.io/bibekchandsah/">Bibek Chand Sah (BCS)</a></h1>
-<h1>👉🏻 <a href="https://github.com/bibekchandsah/bibekchandsah/blob/main/Bibek%20Chand%20Sah%20Resume.pdf">Resume</a></h1>
+<h1>👉🏻 <a href="https://github.com/bibekchandsah/bibekchandsah/blob/main/Bibek%20Chand%20Sah%20Resume.pdf">Resume Preview</a></h1>
+<h1>👉🏻 <a href="https://raw.githubusercontent.com/bibekchandsah/bibekchandsah/main/Bibek%20Chand%20Sah%20Resume.pdf">Resume Download</a></h1>
 
 ## Features
 - Light/dark mode toggle
