@@ -431,6 +431,15 @@ img {
     align-items: center;
 }
 
+.MostPopularContainer p.card-text {
+    height: 96px;
+    overflow: auto;
+}
+
+.MostPopularContainer .itemBox .row {
+    align-items: center;
+}
+
 .testimonial {
     max-width: 270px;
     max-height: 400px;
@@ -1080,6 +1089,15 @@ img {
 
 
 /* Downloads */
+.DownloadContainer p.card-text {
+    height: 96px;
+    overflow: auto;
+}
+
+.DownloadContainer .itemBox .row {
+    align-items: center;
+}
+
 .downloadButton {
     bottom: 5px;
     right: 5px;
@@ -1103,6 +1121,14 @@ img {
 
 
 /* page-1 */
+.projectContainer1 p.card-text {
+    height: 96px;
+    overflow: auto;
+}
+
+.projectContainer1 .itemBox .row {
+    align-items: center;
+}
 .loadMoreProject {
     display: flex;
     justify-content: center;
@@ -1117,6 +1143,7 @@ img {
 /* html&css */
 .mostPopularContainer .col.itemBox:hover .card,
 .recentContainer .col.itemBox:hover .card,
+.DownloadContainer .col.itemBox:hover .card,
 .HtmlCssContainer .col.itemBox:hover .card,
 .JavaScriptContainer .col.itemBox:hover .card,
 .ProjectContainer .col.itemBox:hover .card,
@@ -1130,6 +1157,7 @@ img {
 
 .mostPopularContainer .card a,
 .recentContainer .card a,
+.DownloadContainer .card a,
 .HtmlCssContainer .card a,
 .JavaScriptContainer .card a,
 .ProjectContainer .card a,
@@ -1141,6 +1169,7 @@ img {
 
 .mostPopularContainer .col.itemBox:hover .card img,
 .recentContainer .col.itemBox:hover .card img,
+.DownloadContainer .col.itemBox:hover .card img,
 .HtmlCssContainer .col.itemBox:hover .card img,
 .JavaScriptContainer .col.itemBox:hover .card img,
 .ProjectContainer .col.itemBox:hover .card img,

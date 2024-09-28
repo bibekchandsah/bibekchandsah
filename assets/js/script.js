@@ -830,7 +830,7 @@ AOS.init();
 //     }
 // });
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
     if (e.keyCode == 123 || // F12
         (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || // Ctrl+Shift+I
         (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) || // Ctrl+Shift+J
@@ -1118,25 +1118,25 @@ cardDataMostPopular.forEach(function (cardInfo) {
 // recent projects Container Data 
 var cardData = [
     {
+        img: "https://cdn-icons-png.flaticon.com/512/3375/3375152.png",
+        altText: "Eye care Remainder",
+        name: "Eye care Remainder",
+        link: "https://raw.githubusercontent.com/bibekchandsah/software/main/EyeCare.exe",
+        description: "EyeCare Reminder is a user-friendly application designed to help you maintain healthy vision. By default, it sends a reminder every 20 minutes to look away from your screen and focus on a distant object, reducing eye strain. Users can customize the reminder interval and personalize the message to suit their preferences. Stay proactive about your eye health with EyeCare Reminder!"
+    },
+    {
+        img: "https://cdn-icons-png.flaticon.com/512/15749/15749441.png",
+        altText: "Network Speed Monitor",
+        name: "Network Speed Monitor",
+        link: "visit_or_download_link",
+        description: "Network Speed Monitor is a comprehensive application designed to provide real-time insights into your network performance. This tool offers a suite of features to help you monitor, analyze, and optimize your internet connection."
+    },
+    {
         img: "https://bibekchandsah.github.io/kiitcse/assets/image/KIIT_CSE_blue_name_transparent.png",
         altText: "KIIT CSE",
         name: "KIIT CSE",
         link: "https://github.com/bibekchandsah/kiitcse",
         description: "This resource hub simplifies your educational journey in Computer Science and Engineering (CSE). It offers: Previous Year Questions (PYQs), Concise Notes, Video Lectures."
-    },
-    {
-        img: "https://bibekchandsah.github.io/Homepage/favicon_io/apple-touch-icon.png",
-        altText: "Homepage",
-        name: "Homepage",
-        link: "https://github.com/bibekchandsah/Homepage",
-        description: "This homepage is designed to suit your preferences and needs. It offers many features and useful items that you use every day. You can easily customize it to make it your own."
-    },
-    {
-        img: "https://bibekchandsah.github.io/feedback/favicon/apple-touch-icon.png",
-        altText: "feedback form",
-        name: "Feedback",
-        link: "https://github.com/bibekchandsah/feedback",
-        description: "A platform for collecting feedback and suggestions to improve user experience and satisfaction. "
     },
 
     // {
@@ -1192,6 +1192,48 @@ cardData.forEach(function (cardInfo) {
 // project container (page-1)
 // projects Data
 var cardDataProject1 = [
+    // {
+    //     img: "img_link",
+    //     altText: "program_name",
+    //     name: "program_name",
+    //     link: "visit_or_download_link",
+    //     description: "description"
+    // },
+    {
+        img: "https://cdn-icons-png.flaticon.com/512/3375/3375152.png",
+        altText: "Eye care Remainder",
+        name: "Eye care Remainder",
+        link: "https://raw.githubusercontent.com/bibekchandsah/software/main/EyeCare.exe",
+        description: "EyeCare Reminder is a user-friendly application designed to help you maintain healthy vision. By default, it sends a reminder every 20 minutes to look away from your screen and focus on a distant object, reducing eye strain. Users can customize the reminder interval and personalize the message to suit their preferences. Stay proactive about your eye health with EyeCare Reminder!"
+    },
+    {
+        img: "https://cdn-icons-png.flaticon.com/512/15749/15749441.png",
+        altText: "Network Speed Monitor",
+        name: "Network Speed Monitor",
+        link: "visit_or_download_link",
+        description: "Network Speed Monitor is a comprehensive application designed to provide real-time insights into your network performance. This tool offers a suite of features to help you monitor, analyze, and optimize your internet connection."
+    },
+    {
+        img: "https://cdn-icons-png.flaticon.com/512/12560/12560388.png",
+        altText: "Video Call Enhancer",
+        name: "Video Call Enhancer",
+        link: "https://raw.githubusercontent.com/bibekchandsah/software/main/Video%20call%20enhancer.exe",
+        description: "When it’s dim or you’re on a night video call, it acts like a flash to brighten up your video."
+    },
+    {
+        img: "https://cdn-icons-png.flaticon.com/512/16787/16787237.png",
+        altText: "Circular Menu",
+        name: "Circular Menu",
+        link: "https://raw.githubusercontent.com/bibekchandsah/software/main/Circular_Menu.zip",
+        description: "It’s packed with shortcuts to keep anyone from snooping on what you’re up to"
+    },
+    {
+        img: "https://img.icons8.com/?size=256&id=JjXkZB4POgHN&format=png",
+        altText: "Materials",
+        name: "Materials",
+        link: "https://raw.githubusercontent.com/bibekchandsah/software/main/Materials.apk",
+        description: "It contains the materials regarding the KIIT University which contains the student detail of 2022 admitted batch and many more things."
+    },
     {
         img: "https://bibekchandsah.github.io/kiitcse/assets/image/KIIT_CSE_blue_name_transparent.png",
         altText: "KIIT CSE",
@@ -1618,6 +1660,104 @@ if (loadMoreButton) {
         }, 500); // 0.5 second delay for demonstration purposes, replace with actual loading code
     });
 }
+
+
+
+
+
+// downloads
+// Initialize an empty array to store the Download data
+let DownloadData = [];
+
+// Function to update the Download data with new entries
+function updateDownloadData(...entries) {
+    // Loop through each entry in the arguments
+    for (let i = 0; i < entries.length; i += 11) {
+        let ProjectTypeFilters = entries[i].split(' '); // Split filters into an array
+        let ProjectName = entries[i + 1];
+        let ProjectLink = entries[i + 2];
+        let ProjectImageLink = entries[i + 3];
+        let ProjectDescription = entries[i + 4];
+        let Project1stName = entries[i + 5];
+        let Project1stLink = entries[i + 6];
+        let Project2ndName = entries[i + 7];
+        let Project2ndLink = entries[i + 8];
+        let Project3rdName = entries[i + 9];
+        let Project3rdLink = entries[i + 10];
+
+        // Push new data to the DownloadData array
+        DownloadData.push({
+            "ProjectTypeFilters": ProjectTypeFilters, // Store multiple filters as an array
+            "ProjectName": ProjectName,
+            "ProjectLink": ProjectLink,
+            "ProjectImageLink": ProjectImageLink,
+            "ProjectDescription": ProjectDescription,
+            "Project1stName": Project1stName,
+            "Project1stLink": Project1stLink,
+            "Project2ndName": Project2ndName,
+            "Project2ndLink": Project2ndLink,
+            "Project3rdName": Project3rdName,
+            "Project3rdLink": Project3rdLink,
+        });
+    }
+}
+
+// Function to generate HTML elements for Download based on Download data
+function generateDownloadElements() {
+    // Get the container where Download elements will be appended
+    let DownloadContainer = document.querySelector('.DownloadContainer');
+
+    // Clear previous content
+    // DownloadContainer.innerHTML = '';
+
+    // Loop through each Download entry in the DownloadData array
+    // DownloadData.forEach(entry => {
+    DownloadData.forEach((entry, index) => {
+        // Create a new Download card element
+        let DownloadCard = document.createElement('div');
+        DownloadCard.classList.add('col', 'itemBox');
+        entry.ProjectTypeFilters.forEach(filter => {
+            DownloadCard.classList.add(filter); // Add each filter as a class
+        });
+        DownloadCard.setAttribute('data-aos', 'fade-up');
+
+
+        // Calculate z-index dynamically
+        let zIndex = 50 - index;
+        DownloadCard.style.zIndex = zIndex;
+
+
+        // Construct the HTML for the Download card
+        DownloadCard.innerHTML = `
+        <div class="card mb-1" style="max-width: 540px;" >
+            <div class="row g-0">
+                <div class="col-md-4 projectImage">
+                    <img src="${entry.ProjectImageLink}" class="img-fluid rounded-start" alt="${entry.ProjectName}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold"><a href="${entry.ProjectLink}" target="_blank">${entry.ProjectName}</a></h5>
+                        <p class="card-text">${entry.ProjectDescription}</p>
+                    </div>
+                    <div class="btn-group float-end downloadButton" role="group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Download </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="${entry.Project1stLink}">${entry.Project1stName}</a></li>
+                            <li><a class="dropdown-item" href="${entry.Project2ndLink}">${entry.Project2ndName}</a></li>
+                            <li><a class="dropdown-item" href="${entry.Project3rdLink}">${entry.Project3rdName}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        // Append the Download card to the Download container
+        DownloadContainer.appendChild(DownloadCard);
+    });
+}
+// Generate Download elements
+generateDownloadElements();
 
 
 
@@ -2665,7 +2805,7 @@ function generateSoftwareElements() {
         let zIndex = 50 - index;
         SoftwareCard.style.zIndex = zIndex;
 
-        
+
         // Construct the HTML for the Software card
         SoftwareCard.innerHTML = `
         <div class="card mb-1" style="max-width: 540px;" >
@@ -2827,16 +2967,18 @@ var swiper = new Swiper(".slide-content", {
 // for all page
 // filter the search
 let temp1 = document.querySelector("#noteTopicInput");
-temp1.onkeyup = function (e) {
-    const searchValue = e.target.value.toLowerCase();
-    $('.itemBox').each(function () {
-        const itemText = $(this).text().toLowerCase();
-        if (itemText.includes(searchValue)) {
-            $(this).show('1000');
-        } else {
-            $(this).hide('1000');
-        }
-    });
+if (temp1) {
+    temp1.onkeyup = function (e) {
+        const searchValue = e.target.value.toLowerCase();
+        $('.itemBox').each(function () {
+            const itemText = $(this).text().toLowerCase();
+            if (itemText.includes(searchValue)) {
+                $(this).show('1000');
+            } else {
+                $(this).hide('1000');
+            }
+        });
+    };
 };
 
 
